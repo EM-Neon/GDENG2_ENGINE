@@ -1,0 +1,2 @@
+C:\Users\Nemeon\Desktop\Tutorial5_GraphicsEngine_DrawingTriangle\Debug\DirectXGame.exe
+C:\Users\Nemeon\Desktop\GDENG_ENGINE\Debug\DirectXGame.exe
