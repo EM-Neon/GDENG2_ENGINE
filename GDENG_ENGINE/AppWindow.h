@@ -9,6 +9,8 @@
 #include "ConstantBuffer.h"
 #include "Quad.h"
 #include "Line.h"
+#include "ImprovedLine.h"
+#include <vector>
 
 class AppWindow: public Window
 {
@@ -39,5 +41,6 @@ private:
 	Quad quad1;
 	Quad quad2;
 	Line line;
+	ImprovedLine improvedLine;
 };
 

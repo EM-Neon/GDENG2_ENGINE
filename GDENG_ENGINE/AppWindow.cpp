@@ -68,6 +68,15 @@ void AppWindow::onCreate()
 
 	line.init(line_list[0], line_list[1]);
 
+	std::vector<Vertex::vertex> lineVect
+	{
+		{-0.75f,	-0.7f,	0.0f,	-0.5f,	0.8f,	0.0f,	1,1,0,	0,1,1},	//POS1
+		{-0.5f,	0.8f,	0.0f,	0.9f,	0.3f,	0.0f,	1,0,0,	0,1,0},			//POS2
+		{0.9f,0.3f, 0.0f,	0.0f,0.0f,0.0f,		1,1,1,		0,1,1}
+	};
+
+	improvedLine.init(lineVect);
+
 	//m_vb=GraphicsEngine::get()->createVertexBuffer();
 	////m_vb2=GraphicsEngine::get()->createVertexBuffer();
 	////m_vb3=GraphicsEngine::get()->createVertexBuffer();
@@ -157,10 +166,11 @@ void AppWindow::onUpdate()
 	//GraphicsEngine::get()->getImmediateDeviceContext()->drawTriangleStrip(m_vb3->getSizeVertexList(), 0);
 
 	//quad.draw();
-	quad1.draw();
+	//quad1.draw();
 	//quad2.draw();
 
-	line.draw();
+	//line.draw();
+	improvedLine.draw();
 
 	m_swap_chain->present(true);
 }
@@ -173,4 +183,6 @@ void AppWindow::onDestroy()
 	quad.onDestroy();
 	quad1.onDestroy();
 	quad2.onDestroy();
+	line.onDestroy();
+	improvedLine.onDestroy();
 }
