@@ -60,6 +60,7 @@ void AppWindow::onCreate()
 
 	quad2.init(list2[0], list2[1], list2[2], list2[3]);
 
+
 	Vertex::vertex line_list[] =
 	{
 		{-0.75f,-0.7f,0.0f,		-0.5f,0.8f,0.0f,		1,1,0,		0,1,1},
@@ -68,15 +69,58 @@ void AppWindow::onCreate()
 
 	line.init(line_list[0], line_list[1]);
 
+	//LINES
+
+	//I
 	std::vector<Vertex::vertex> lineVect
 	{
-		{-0.75f,	-0.7f,	0.0f,	-0.5f,	0.8f,	0.0f,	1,1,0,	0,1,1},	//POS1
-		{-0.5f,	0.8f,	0.0f,	0.9f,	0.3f,	0.0f,	1,0,0,	0,1,0},			//POS2
-		{0.35f,-0.6f,0.0f,		-0.75f, -0.7f,0.0f,		0,0,1,		1,0,0},
-		{0.9f,0.3f, 0.0f,	0.0f,0.0f,0.0f,		1,1,1,		0,1,1}
+		{-0.75f	,-0.5f	,0.0f	,-0.125f	,0.5f	,0.0f	,1,1,0,	0,1,1},	//POS1
+		{-0.5f	,-0.5f	,0.0f	,-0.375f	,0.5f	,0.0f	,1,0,0,	0,1,0},			//POS2
+		{-0.5f	,0.5f	,0.0f	,-0.375f	,-0.5f		,0.0f	,0,0,0,	0,0,0},
+		{-0.25f	,0.5f	,0.0f	,-0.125f	,-0.5f		,0.0f	,0,0,0,	0,0,0},
+	};
+
+	std::vector<Vertex::vertex> lineVect1
+	{
+		{-0.75f	,0.5f	,0.0f	,0.0f		,-0.5f	,0.0f	,1,1,0,	0,1,1},	//POS1
+		{-0.5f	,0.5f	,0.0f	,0.0f		,0.5f		,0.0f	,1,0,0,	0,1,0},			//POS2
+		{-0.5f	,-0.5f	,0.0f	,0.25f	,0.5f		,0.0f	,0,0,0,	0,0,0},
+		{-0.25f	,-0.5f	,0.0f	,0.0f		,0.0f		,0.0f	,0,0,0,	0,0,0},
+		{-0.25f	,-0.5f	,0.0f	,0.25f	,-0.5f	,0.0f	,0,0,0,	0,0,0},
+		{-0.25f	,-0.5f	,0.0f	,0.0f		,-0.5f	,0.0f	,0,0,0,	0,0,0},
 	};
 
 	improvedLine.init(lineVect);
+	improvedLine1.init(lineVect1);
+
+	//A
+	std::vector<Vertex::vertex> lineVect2
+	{
+		{-0.25f	,-0.5f	,0.0f,	0.625f	,0.5f		,0.0f,1,1,0,	0,1,0},
+		{0.0f	,0.5f	,0.0f,	0.625f	,-0.5f		,0.0f,1,1,0,	0,1,0},
+		{0.25f	,-0.5f	,0.0f,	0.375f	,-0.5f		,0.0f,1,1,0,	0,1,0},
+		{0.0f	,0.5f	,0.0f,	0.375f	,0.5f		,0.0f,1,1,0,	0,1,0},
+	};
+
+	std::vector<Vertex::vertex> lineVect3
+	{
+		{-0.125f, 0.0f, 0.0f, -0.125f, 0.0f, 0.0f, 1,1,0, 0,1,0},
+		{0.125f, 0.0f, 0.0f,  -0.375f, 0.0f, 0.0f, 1,1,0, 0,1,0},
+	};
+
+	improvedLine2.init(lineVect2);
+	improvedLine3.init(lineVect3);
+
+	//N
+	std::vector<Vertex::vertex> lineVect4
+	{
+		{0.25f	,-0.5f	,0.0f,	-0.5f		,0.5f		,0.0f,1,1,0,	0,1,0},
+		{0.25f	,0.5f	,0.0f,	-0.75f	,0.5f		,0.0f,1,1,0,	0,1,0},
+		{0.75f	,-0.5f	,0.0f,	-0.75f	,-0.5f	,0.0f,0,0,0,	0,0,0},
+		{0.75f	,0.5f	,0.0f,	-0.5f		,-0.5f	,0.0f,0,0,0,	0,0,0},
+	};
+
+	improvedLine4.init(lineVect4);
 
 	//m_vb=GraphicsEngine::get()->createVertexBuffer();
 	////m_vb2=GraphicsEngine::get()->createVertexBuffer();
@@ -172,6 +216,10 @@ void AppWindow::onUpdate()
 
 	//line.draw();
 	improvedLine.draw();
+	improvedLine1.draw();
+	improvedLine2.draw();
+	improvedLine3.draw();
+	improvedLine4.draw();
 
 	m_swap_chain->present(true);
 }
@@ -184,6 +232,9 @@ void AppWindow::onDestroy()
 	quad.onDestroy();
 	quad1.onDestroy();
 	quad2.onDestroy();
-	line.onDestroy();
 	improvedLine.onDestroy();
+	improvedLine1.onDestroy();
+	improvedLine2.onDestroy();
+	improvedLine3.onDestroy();
+	improvedLine4.onDestroy();
 }

@@ -42,5 +42,9 @@ private:
 	Quad quad2;
 	Line line;
 	ImprovedLine improvedLine;
+	ImprovedLine improvedLine1;
+	ImprovedLine improvedLine2;
+	ImprovedLine improvedLine3;
+	ImprovedLine improvedLine4;
 };
 
