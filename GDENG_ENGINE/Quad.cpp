@@ -88,7 +88,10 @@ void Quad::draw()
 
 void Quad::onDestroy()
 {
-	m_vb->release();
-	m_vs->release();
-	m_ps->release();
+	if(m_vb != NULL)
+		m_vb->release();
+	if(m_vs != NULL)
+		m_vs->release();
+	if(m_ps != NULL)
+		m_ps->release();
 }
