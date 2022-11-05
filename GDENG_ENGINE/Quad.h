@@ -15,6 +15,9 @@ class Quad
 {
 public:
 	Quad();
+
+	void updateQuadPosition();
+
 	~Quad();
 
 public:

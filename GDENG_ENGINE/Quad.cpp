@@ -1,12 +1,22 @@
 #include "Quad.h"
+#include "Matrix4x4.h"
 
 _declspec(align(16))
 struct constant
 {
+	Matrix4x4 m_world;
+	Matrix4x4 m_view;
+	Matrix4x4 m_proj;
+
 	float m_angle;
 };
 
 Quad::Quad()
+{
+
+}
+
+void Quad::updateQuadPosition()
 {
 
 }
@@ -66,11 +76,9 @@ void Quad::draw()
 		time += 0.01f;
 	}
 
-	m_angle += time * EngineTime::getDeltaTime();
-	constant cc;
-	cc.m_angle = m_angle;
+	m_angle += EngineTime::getDeltaTime();
 
-	m_cb->update(GraphicsEngine::get()->getImmediateDeviceContext(), &cc);
+	updateQuadPosition();
 
 	GraphicsEngine::get()->getImmediateDeviceContext()->setConstantBuffer(m_vs, m_cb);
 	GraphicsEngine::get()->getImmediateDeviceContext()->setConstantBuffer(m_ps, m_cb);
