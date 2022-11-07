@@ -1,1 +1,2 @@
 C:\Users\Nemeon\Desktop\Gits\GDENG2\GDENG_ENGINE\x64\Debug\DirectXGame.exe
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\x64\Debug\DirectXGame.exe

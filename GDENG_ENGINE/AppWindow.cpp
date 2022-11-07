@@ -28,13 +28,14 @@ void AppWindow::update()
 	constant cc;
 	cc.m_angle = m_angle;
 
-	m_delta_pos += EngineTime::getDeltaTime() / 5.0f;
+	/*m_delta_pos += EngineTime::getDeltaTime() / 5.0f;
 	if (m_delta_pos > 1.0f)
-		m_delta_pos = 0;
+		m_delta_pos = 0;*/
 
 	Matrix4x4 temp;
 
 	m_delta_scale += EngineTime::getDeltaTime() / 0.5f;
+	m_delta_pos += EngineTime::getDeltaTime() / 0.5f;
 
 	//cc.m_world.setTranslation(Vector3D::lerp(Vector3D(-1.5,-1.5,0),Vector3D(1.5,1.5,0), m_delta_pos));
 	//cc.m_world.setScale(Vector3D::lerp(Vector3D(0.5,0.5,0),Vector3D(2,2,0), (sin(m_delta_scale)+1.0f)/2.0f));
@@ -59,6 +60,19 @@ void AppWindow::update()
 
 	cc.m_world.setIdentity();
 
+	Vector3D scale = Vector3D(1, 1, 1);
+	Vector3D trans = Vector3D(0, 0, 0);
+
+	temp.setIdentity();
+	temp.setScale(scale.lerp(Vector3D(1, 1, 1), Vector3D(5, 0, 5), (sin(m_delta_scale) + 1.0f) / 2.0f));
+	cc.m_world *= temp;
+
+	/*temp.setIdentity();
+	temp.setTranslation(trans.lerp(Vector3D(0, 0, 0), Vector3D(2, 2, 0), (sin(m_delta_scale) + 1.0f) / 2.0f));
+	cc.m_world *= temp;*/
+	
+
+
 	Matrix4x4 world_cam;
 	world_cam.setIdentity();
 
@@ -70,6 +84,22 @@ void AppWindow::update()
 	temp.setRotationY(m_rot_y);
 	world_cam *= temp;
 
+	
+
+
+	/*m_delta_rot += 0.01f;
+	temp.setIdentity();
+	temp.setRotationZ(m_delta_rot);
+	cc.m_world *= temp;
+
+	temp.setIdentity();
+	temp.setRotationY(m_delta_rot);
+	cc.m_world *= temp;
+
+	temp.setIdentity();
+	temp.setRotationX(m_delta_rot);
+	cc.m_world *= temp;*/
+	
 	Vector3D new_pos = m_world_cam.getTranslation() + world_cam.getZDirection() * (m_forward * 0.3f);
 
 	new_pos = new_pos + world_cam.getXDirection() * (m_rightward * 0.3f);
@@ -79,7 +109,7 @@ void AppWindow::update()
 	m_world_cam = world_cam;
 
 	world_cam.inverse();
-
+	
 
 	cc.m_view = world_cam;
 	/*cc.m_proj.setOrthoLH
@@ -125,16 +155,16 @@ void AppWindow::onCreate()
 	{
 		//X - Y - Z
 		//FRONT FACE
-		{Vector3D(-0.5f,-0.5f,-0.5f),Vector3D(1,0,0),	Vector3D(0,1,0)},
+		{Vector3D(-0.5f,-0.5f,-0.5f),Vector3D(1,0,0),	Vector3D(0,0,1)},
 		{Vector3D(-0.5f,0.5f,-0.5f),  Vector3D(1,1,0),Vector3D(0,1,1)},
-		{Vector3D(0.5f,0.5f, -0.5f),Vector3D(0,0,1), Vector3D(1,0,0)},
-		{Vector3D(0.5f,-0.5f,-0.5f),Vector3D(1,1,1),Vector3D(0,1,1)},
+		{Vector3D(0.5f,0.5f, -0.5f),Vector3D(0,1,1), Vector3D(1,1,0)},
+		{Vector3D(0.5f,-0.5f,-0.5f),Vector3D(0,0,1),Vector3D(1,0,0)},
 
 		//BACK FACE
-		{Vector3D(0.5,-0.5f,0.5f),Vector3D(1,0,0),	Vector3D(0,1,0)},
-		{Vector3D(0.5f,0.5f,0.5f),  Vector3D(1,1,0),Vector3D(0,1,1)},
-		{Vector3D(-0.5f,0.5f, 0.5f),Vector3D(0,0,1), Vector3D(1,0,0)},
-		{Vector3D(-0.5f,-0.5f,0.5f),Vector3D(1,1,1),Vector3D(0,1,1)},
+		{Vector3D(0.5,-0.5f,0.5f),Vector3D(0,0,1),	Vector3D(1,0,0)},
+		{Vector3D(0.5f,0.5f,0.5f),  Vector3D(0,1,1),Vector3D(1,1,0)},
+		{Vector3D(-0.5f,0.5f, 0.5f),Vector3D(1,1,0), Vector3D(0,1,1)},
+		{Vector3D(-0.5f,-0.5f,0.5f),Vector3D(1,0,0),Vector3D(0,0,1)},
 	};
 
 

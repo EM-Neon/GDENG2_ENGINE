@@ -71,6 +71,9 @@
     </ClCompile>
     <ClCompile Include="EngineTime.cpp" />
     <ClCompile Include="Line.cpp" />
+    <ClCompile Include="ImprovedLine.cpp" />
+    <ClCompile Include="IndexBuffer.cpp" />
+    <ClCompile Include="InputSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppWindow.h">
@@ -106,5 +109,13 @@
     <ClInclude Include="Vertex.h" />
     <ClInclude Include="EngineTime.h" />
     <ClInclude Include="Line.h" />
+    <ClInclude Include="ImprovedLine.h" />
+    <ClInclude Include="IndexBuffer.h" />
+    <ClInclude Include="InputListener.h" />
+    <ClInclude Include="InputSystem.h" />
+    <ClInclude Include="Matrix4x4.h" />
+    <ClInclude Include="Point.h" />
+    <ClInclude Include="Vector3D.h" />
+    <ClInclude Include="Vector4D.h" />
   </ItemGroup>
 </Project>

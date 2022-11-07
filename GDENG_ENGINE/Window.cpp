@@ -86,7 +86,7 @@ bool Window::init()
 		window = this;*/
 
 	//Creation of the window
-	m_hwnd=::CreateWindowEx(WS_EX_TOPMOST, "MyWindowClass", "DirectX Application", 
+	m_hwnd=::CreateWindowEx(WS_EX_OVERLAPPEDWINDOW, "MyWindowClass", "DirectX Application", 
 		WS_CAPTION|WS_SYSMENU|WS_MAXIMIZEBOX|WS_MINIMIZEBOX|WS_SIZEBOX, CW_USEDEFAULT, CW_USEDEFAULT, 1024, 768,
 		NULL, NULL, NULL, this);
 

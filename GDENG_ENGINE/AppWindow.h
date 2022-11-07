@@ -60,6 +60,7 @@ private:
 	float m_angle = 0;
 	float m_delta_pos;
 	float m_delta_scale;
+	float m_delta_rot;
 
 	float m_rot_x = 0;
 	float m_rot_y = 0;
