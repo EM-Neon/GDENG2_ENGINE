@@ -74,6 +74,10 @@
     <ClCompile Include="ImprovedLine.cpp" />
     <ClCompile Include="IndexBuffer.cpp" />
     <ClCompile Include="InputSystem.cpp" />
+    <ClCompile Include="AGameObject.cpp" />
+    <ClCompile Include="Cube.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="SceneCameraHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppWindow.h">
@@ -117,5 +121,10 @@
     <ClInclude Include="Point.h" />
     <ClInclude Include="Vector3D.h" />
     <ClInclude Include="Vector4D.h" />
+    <ClInclude Include="AGameObject.h" />
+    <ClInclude Include="Cube.h" />
+    <ClInclude Include="Utils.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="SceneCameraHandler.h" />
   </ItemGroup>
 </Project>

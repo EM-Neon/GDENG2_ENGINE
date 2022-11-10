@@ -1,37 +1,37 @@
 #include "Cube.h"
 #include "GraphicsEngine.h"
-#include "InputSystem.h"
-#include "SwapChain.h"
-
-
+#include "DeviceContext.h"
+#include "EngineTime.h"
+#include "SceneCameraHandler.h"
 #include "Vertex.h"
+
+#include "SwapChain.h"
 
 Cube::Cube(string name, void* shaderByteCode, size_t sizeShader): AGameObject(name)
 {
-	Vertex::vertex quadList[] =
+	sceneCamera = SceneCameraHandler::getInstance()->getSceneCamera();
+
+	Vertex::vertex vertex_list[] = 
 	{
-		//X - Y - Z
+		//X, Y, Z
 		//FRONT FACE
-		{Vector3D(-0.5f,-0.5f,-0.5f),Vector3D(1,0,0),	Vector3D(0,1,0)},
-		{Vector3D(-0.5f,0.5f,-0.5f),  Vector3D(1,1,0),Vector3D(0,1,1)},
-		{Vector3D(0.5f,0.5f, -0.5f),Vector3D(0,0,1), Vector3D(1,0,0)},
-		{Vector3D(0.5f,-0.5f,-0.5f),Vector3D(1,1,1),Vector3D(0,1,1)},
+		{Vector3D(-0.5f,-0.5f,-0.5f),    Vector3D(1,1,1), Vector3D(1,1,1) },
+		{Vector3D(-0.5f,0.5f,-0.5f),     Vector3D(1,1,1), Vector3D(1,1,1) },
+		{Vector3D(0.5f,0.5f,-0.5f),      Vector3D(0,0,0), Vector3D(0,0,0) },
+		{Vector3D(0.5f,-0.5f,-0.5f),     Vector3D(0,0,0), Vector3D(0,0,0) },
 
 		//BACK FACE
-		{Vector3D(0.5,-0.5f,0.5f),Vector3D(1,0,0),	Vector3D(0,1,0)},
-		{Vector3D(0.5f,0.5f,0.5f),  Vector3D(1,1,0),Vector3D(0,1,1)},
-		{Vector3D(-0.5f,0.5f, 0.5f),Vector3D(0,0,1), Vector3D(1,0,0)},
-		{Vector3D(-0.5f,-0.5f,0.5f),Vector3D(1,1,1),Vector3D(0,1,1)},
+		{Vector3D(0.5f,-0.5f,0.5f),      Vector3D(1,1,1), Vector3D(1,1,1) },
+		{Vector3D(0.5f,0.5f,0.5f),       Vector3D(1,1,1), Vector3D(1,1,1) },
+		{Vector3D(-0.5f,0.5f,0.5f),      Vector3D(0,0,0), Vector3D(0,0,0) },
+		{Vector3D(-0.5f,-0.5f,0.5f),     Vector3D(0,0,0), Vector3D(0,0,0) },
 	};
 
-	this->vertexBuffer = GraphicsEngine::get()->createVertexBuffer();
-	this->vertexBuffer->load(quadList, sizeof(Vertex::vertex), ARRAYSIZE(quadList), shaderByteCode, sizeShader);
-
-	unsigned int indexList[] =
+	unsigned int index_list[] =
 	{
 		//FRONT SIDE
-		0,1,2,	//FIST TRIANGLE
-		2,3,0,	//SECOND TRIANGLE
+		0,1,2,  //FIRST TRIANGLE
+		2,3,0,  //SECOND TRIANGLE
 		//BACK SIDE
 		4,5,6,
 		6,7,4,
@@ -48,65 +48,131 @@ Cube::Cube(string name, void* shaderByteCode, size_t sizeShader): AGameObject(na
 		7,6,1,
 		1,0,7
 	};
-	this->indexBuffer = GraphicsEngine::get()->createIndexBuffer();
-	this->indexBuffer->load(indexList, ARRAYSIZE(indexList));
 
-	constant cc = {};
+	ib = GraphicsEngine::get()->createIndexBuffer();
+	ib->load(index_list, ARRAYSIZE(index_list));
+
+	GraphicsEngine::get()->compileVertexShader(L"VertexShader.hlsl", "vsmain", &shaderByteCode, &sizeShader);
+	vs = GraphicsEngine::get()->createVertexShader(shaderByteCode, sizeShader);
+
+	vb = GraphicsEngine::get()->createVertexBuffer();
+	vb->load(vertex_list, sizeof(Vertex::vertex), ARRAYSIZE(vertex_list), shaderByteCode, sizeShader);
+
+	GraphicsEngine::get()->releaseCompiledShader();
+
+	GraphicsEngine::get()->compilePixelShader(L"PixelShader.hlsl", "psmain", &shaderByteCode, &sizeShader);
+	ps = GraphicsEngine::get()->createPixelShader(shaderByteCode, sizeShader);
+	GraphicsEngine::get()->releaseCompiledShader();
+
+	constant cc;
 	cc.m_angle = 0;
-	this->constantBuffer = GraphicsEngine::get()->createConstantBuffer();
-	this->constantBuffer->load(&cc, sizeof(constant));
+
+	cb = GraphicsEngine::get()->createConstantBuffer();
+	cb->load(&cc, sizeof(constant));
 }
 
 Cube::~Cube()
 {
-	this->vertexBuffer->release();
-	this->indexBuffer->release();
+	this->vb->release();
+	this->ib->release();
+	this->cb->release();
+	this->ps->release();
+	this->vs->release();
 	AGameObject::~AGameObject();
 }
 
 void Cube::update(float deltaTime)
 {
+	this->ticks += deltaTime;
 	this->deltaTime = deltaTime;
 }
 
-void Cube::draw(int width, int height, VertexShader* vertexShader, PixelShader* pixelShader)
+void Cube::draw(int width, int height)
 {
-	GraphicsEngine* graphEngine = GraphicsEngine::get();
-	DeviceContext* deviceContext = graphEngine->getImmediateDeviceContext();
-
-	constant cc = {};
-
-	if(this->deltaPos > 1.0f)
+	if(ticks >= animationInterval)
 	{
-		this->deltaPos = 0.0f;
+		isIncreasing = !isIncreasing;
+		ticks = 0;
+	}
+
+	if(isIncreasing)
+	{
+		rotFactor += deltaTime;
 	}
 	else
 	{
-		this->deltaPos += this->deltaTime * 0.1f;
+		rotFactor -= deltaTime;
 	}
 
-	Matrix4x4 allMatrix; allMatrix.setIdentity();
-	Matrix4x4 translationMatrix; translationMatrix.setIdentity(); translationMatrix.setTranslation(this->getLocalPosition());
-	Matrix4x4 scaleMatrix; scaleMatrix.setScale(this->getLocalScale());
+	GraphicsEngine* engine = GraphicsEngine::get();
+	DeviceContext* device = GraphicsEngine::get()->getImmediateDeviceContext();
+
+	constant cc;
+	Matrix4x4 temp;
+	temp.setIdentity();
+
+	Matrix4x4 trans;
+	trans.setIdentity();
+	trans.setTranslation(this->getLocalPosition());
+
+	Matrix4x4 scale;
+	scale.setIdentity();
+	scale.setScale(this->getLocalScale());
+
+	Matrix4x4 x, y, z, rot;
+
+	x.setIdentity();
+	y.setIdentity();
+	z.setIdentity();
 	Vector3D rotation = this->getLocalRotation();
-	Matrix4x4 zMatrix; zMatrix.setRotationZ(rotation.m_z);
-	Matrix4x4 xMatrix; xMatrix.setRotationX(rotation.m_x);
-	Matrix4x4 yMatrix; yMatrix.setRotationY(rotation.m_y);
 
-	//Scale --> Rotate --> Transform as recommended order.
-	Matrix4x4 rotMatrix; rotMatrix.setIdentity();
-	rotMatrix *= xMatrix;
-	rotMatrix *= yMatrix;
-	rotMatrix *= zMatrix;
+	x.setRotationZ(rotation.m_z);
+	y.setRotationX(rotation.m_x);
+	z.setRotationX(rotation.m_y);
 
-	allMatrix *= scaleMatrix;
-	allMatrix *= rotMatrix;
-	allMatrix *= translationMatrix;
-	cc.m_world = allMatrix;
+	rot.setIdentity();
 
-	Matrix4x4 cameraMatrix = 
+	rot *= x;
+	rot *= y;
+	rot *= z;
+
+	temp *= scale;
+	temp *= rot;
+	temp *= trans;
+
+	cc.m_world = temp;
+
+	cc.m_view = SceneCameraHandler::getInstance()->getSceneCameraWorldCamMatrix();
+
+	float aspec = (float)width / (float)height;
+	sceneCamera = SceneCameraHandler::getInstance()->getSceneCamera();
+
+	float fov = sceneCamera->getFOV();
+	float asp = sceneCamera->getAspectRatio();
+	float nz = sceneCamera->getNearZ();
+	float fz = sceneCamera->getFarZ();
+
+	cc.m_proj.setPerspectiveFovLH(fov, asp, nz, fz);
+
+	cb->update(GraphicsEngine::get()->getImmediateDeviceContext(), &cc);
+
+	GraphicsEngine::get()->getImmediateDeviceContext()->setConstantBuffer(vs, cb);
+	GraphicsEngine::get()->getImmediateDeviceContext()->setConstantBuffer(ps, cb);
+
+	GraphicsEngine::get()->getImmediateDeviceContext()->setVertexShader(vs);
+	GraphicsEngine::get()->getImmediateDeviceContext()->setPixelShader(ps);
+
+	GraphicsEngine::get()->getImmediateDeviceContext()->setVertexBuffer(vb);
+	GraphicsEngine::get()->getImmediateDeviceContext()->setIndexBuffer(ib);
+
+	GraphicsEngine::get()->getImmediateDeviceContext()->drawIndexedTriangleList(ib->getSizeIndexList(), vb->getSizeVertexList(), 0, 0);
+
 }
 
-void Cube::setAnimSpeed(float speed)
+void Cube::setAnimation(float speed, float interval, bool isSpeeding, float rotFactor)
 {
+	this->rotFactor = rotFactor;
+	this->speed = speed;
+	this->animationInterval = interval;
+	this->isIncreasing = isSpeeding;
 }

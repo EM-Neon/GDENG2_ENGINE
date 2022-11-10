@@ -12,15 +12,6 @@ AGameObject::~AGameObject()
 {
 }
 
-void AGameObject::update(float deltaTime)
-{
-}
-
-void AGameObject::draw(int width, int height, VertexShader* vertexShader, PixelShader* pixelShader)
-{
-	//no drawing
-}
-
 void AGameObject::setPosition(float x, float y, float z)
 {
 	this->localPosition = Vector3D(x, y, z);
@@ -29,26 +20,6 @@ void AGameObject::setPosition(float x, float y, float z)
 void AGameObject::setPosition(Vector3D pos)
 {
 	this->localPosition = pos;
-}
-
-Vector3D AGameObject::getLocalPosition()
-{
-	return this->localPosition;
-}
-
-void AGameObject::setScale(float x, float y, float z)
-{
-	this->localScale = Vector3D(x, y, z);
-}
-
-void AGameObject::setScale(Vector3D scale)
-{
-	this->localScale = scale;
-}
-
-Vector3D AGameObject::getLocalScale()
-{
-	return this->localScale;
 }
 
 void AGameObject::setRotation(float x, float y, float z)
@@ -61,9 +32,29 @@ void AGameObject::setRotation(Vector3D rot)
 	this->localRotation = rot;
 }
 
+void AGameObject::setScale(float x, float y, float z)
+{
+	this->localScale = Vector3D(x, y, z);
+}
+
+void AGameObject::setScale(Vector3D scale)
+{
+	this->localScale = scale;
+}
+
+Vector3D AGameObject::getLocalPosition()
+{
+	return this->localPosition;
+}
+
 Vector3D AGameObject::getLocalRotation()
 {
 	return this->localRotation;
+}
+
+Vector3D AGameObject::getLocalScale()
+{
+	return this->localScale;
 }
 
 string AGameObject::getName()

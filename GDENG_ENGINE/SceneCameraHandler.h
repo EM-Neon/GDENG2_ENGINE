@@ -3,5 +3,27 @@
 
 class SceneCameraHandler
 {
+public:
+	static SceneCameraHandler* getInstance();
+	static void initialize();
+	static void destroy();
+
+	void update();
+
+	Matrix4x4 getSceneCameraViewMatrix();
+	Matrix4x4 getSceneCameraWorldCamMatrix();
+	Camera* getSceneCamera();
+
+	void SetSceneCamera(Camera* objCamera);
+	Camera* objCamera;
+
+private:
+	SceneCameraHandler();
+	~SceneCameraHandler();
+	SceneCameraHandler(SceneCameraHandler const&) {};
+	SceneCameraHandler& operator = (SceneCameraHandler const&){};
+	static SceneCameraHandler* sharedInstance;
+
+	Camera* sceneCamera;
 };
 

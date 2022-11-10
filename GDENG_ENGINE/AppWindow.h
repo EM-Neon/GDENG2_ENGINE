@@ -9,6 +9,7 @@
 #include "PixelShader.h"
 #include "InputListener.h"
 #include "Matrix4x4.h"
+#include "Camera.h"
 
 #include "ConstantBuffer.h"
 #include "Quad.h"
@@ -16,6 +17,9 @@
 #include "ImprovedLine.h"
 #include <vector>
 
+#include "Cube.h"
+
+class GraphicsEngine;
 
 class AppWindow: public Window,public InputListener
 {
@@ -36,12 +40,12 @@ public:
 	// Inherited via InputListener
 	virtual void onKeyDown(int key) override;
 	virtual void onKeyUp(int key) override;
-	virtual void onMouseMove(const Point& mouse_pos) override;
+	virtual void onMouseMove(const Point mouse_pos) override;
 
-	virtual void onLeftMouseDown(const Point& delta_mouse_pos) override;
-	virtual void onLeftMouseUp(const Point& delta_mouse_pos) override;
-	virtual void onRightMouseDown(const Point& delta_mouse_pos) override;
-	virtual void onRightMouseUp(const Point& delta_mouse_pos) override;
+	virtual void onLeftMouseDown(const Point delta_mouse_pos) override;
+	virtual void onLeftMouseUp(const Point delta_mouse_pos) override;
+	virtual void onRightMouseDown(const Point delta_mouse_pos) override;
+	virtual void onRightMouseUp(const Point delta_mouse_pos) override;
 
 private:
 	SwapChain * m_swap_chain;
@@ -77,5 +81,17 @@ private:
 	ImprovedLine improvedLine2;
 	ImprovedLine improvedLine3;
 	ImprovedLine improvedLine4;
+
+	Camera* cam;
+	Camera* sceneCam;
+	bool isUsingCameraObj = false;
+
+	Cube* cube;
+	Cube* cube2;
+
+	std::vector<AGameObject*> object_lists;
+
+private:
+	friend class GraphicsEngine;
 };
 
