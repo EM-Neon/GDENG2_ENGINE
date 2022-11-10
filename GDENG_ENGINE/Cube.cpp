@@ -49,25 +49,25 @@ Cube::Cube(string name, void* shaderByteCode, size_t sizeShader): AGameObject(na
 		1,0,7
 	};
 
-	ib = GraphicsEngine::get()->createIndexBuffer();
+	ib = GraphicsEngine::get()->getRenderSystem()->createIndexBuffer();
 	ib->load(index_list, ARRAYSIZE(index_list));
 
-	GraphicsEngine::get()->compileVertexShader(L"VertexShader.hlsl", "vsmain", &shaderByteCode, &sizeShader);
-	vs = GraphicsEngine::get()->createVertexShader(shaderByteCode, sizeShader);
+	GraphicsEngine::get()->getRenderSystem()->compileVertexShader(L"VertexShader.hlsl", "vsmain", &shaderByteCode, &sizeShader);
+	vs = GraphicsEngine::get()->getRenderSystem()->createVertexShader(shaderByteCode, sizeShader);
 
-	vb = GraphicsEngine::get()->createVertexBuffer();
+	vb = GraphicsEngine::get()->getRenderSystem()->createVertexBuffer();
 	vb->load(vertex_list, sizeof(Vertex::vertex), ARRAYSIZE(vertex_list), shaderByteCode, sizeShader);
 
-	GraphicsEngine::get()->releaseCompiledShader();
+	GraphicsEngine::get()->getRenderSystem()->releaseCompiledShader();
 
-	GraphicsEngine::get()->compilePixelShader(L"PixelShader.hlsl", "psmain", &shaderByteCode, &sizeShader);
-	ps = GraphicsEngine::get()->createPixelShader(shaderByteCode, sizeShader);
-	GraphicsEngine::get()->releaseCompiledShader();
+	GraphicsEngine::get()->getRenderSystem()->compilePixelShader(L"PixelShader.hlsl", "psmain", &shaderByteCode, &sizeShader);
+	ps = GraphicsEngine::get()->getRenderSystem()->createPixelShader(shaderByteCode, sizeShader);
+	GraphicsEngine::get()->getRenderSystem()->releaseCompiledShader();
 
 	constant cc;
 	cc.m_angle = 0;
 
-	cb = GraphicsEngine::get()->createConstantBuffer();
+	cb = GraphicsEngine::get()->getRenderSystem()->createConstantBuffer();
 	cb->load(&cc, sizeof(constant));
 }
 
@@ -105,7 +105,7 @@ void Cube::draw(int width, int height)
 	}
 
 	GraphicsEngine* engine = GraphicsEngine::get();
-	DeviceContext* device = GraphicsEngine::get()->getImmediateDeviceContext();
+	DeviceContext* device = GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext();
 
 	constant cc;
 	Matrix4x4 temp;
@@ -154,18 +154,18 @@ void Cube::draw(int width, int height)
 
 	cc.m_proj.setPerspectiveFovLH(fov, asp, nz, fz);
 
-	cb->update(GraphicsEngine::get()->getImmediateDeviceContext(), &cc);
+	cb->update(GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext(), &cc);
 
-	GraphicsEngine::get()->getImmediateDeviceContext()->setConstantBuffer(vs, cb);
-	GraphicsEngine::get()->getImmediateDeviceContext()->setConstantBuffer(ps, cb);
+	GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext()->setConstantBuffer(vs, cb);
+	GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext()->setConstantBuffer(ps, cb);
 
-	GraphicsEngine::get()->getImmediateDeviceContext()->setVertexShader(vs);
-	GraphicsEngine::get()->getImmediateDeviceContext()->setPixelShader(ps);
+	GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext()->setVertexShader(vs);
+	GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext()->setPixelShader(ps);
 
-	GraphicsEngine::get()->getImmediateDeviceContext()->setVertexBuffer(vb);
-	GraphicsEngine::get()->getImmediateDeviceContext()->setIndexBuffer(ib);
+	GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext()->setVertexBuffer(vb);
+	GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext()->setIndexBuffer(ib);
 
-	GraphicsEngine::get()->getImmediateDeviceContext()->drawIndexedTriangleList(ib->getSizeIndexList(), vb->getSizeVertexList(), 0, 0);
+	GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext()->drawIndexedTriangleList(ib->getSizeIndexList(), vb->getSizeVertexList(), 0, 0);
 
 }
 

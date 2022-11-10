@@ -1,48 +1,11 @@
-﻿  AppWindow.cpp
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(39,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(40,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(41,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(42,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(47,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(48,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(49,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(50,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(55,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(56,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(57,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(58,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+﻿  Quad.cpp
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Quad.h(42,13): warning C4305: 'initializing': truncation from 'double' to 'float'
 C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(102,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(103,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(104,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(105,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(155,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Quad.h(42,13): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Line.h(35,13): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\ImprovedLine.h(37,13): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Utils.h(67,17): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Utils.h(72,18): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(29,37): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(39,46): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(40,44): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(186,31): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(193,31): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(200,36): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(207,44): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(214,52): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(221,34): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(228,39): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(235,34): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(242,40): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(249,48): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(256,55): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(263,48): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(270,46): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(277,54): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(458,14): warning C4244: 'initializing': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(459,15): warning C4244: 'initializing': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(461,77): warning C4244: 'argument': conversion from 'float' to 'UINT', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(461,70): warning C4244: 'argument': conversion from 'float' to 'UINT', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(470,51): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(471,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(471,25): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Quad.cpp(79,37): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  RenderSystem.cpp
+  VertexShader.cpp
+  Generating Code...
   DirectXGame.vcxproj -> C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\x64\Debug\DirectXGame.exe
