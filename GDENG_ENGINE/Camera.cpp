@@ -6,7 +6,7 @@
 #include "Utils.h"
 #include "SceneCameraHandler.h"
 
-Camera::Camera(string name) : AGameObject(name)
+Camera::Camera(std::string name) : AGameObject(name)
 {
 	this->setPosition(0, 0, -2);
 	this->localMatrix.setTranslation(this->localPosition);

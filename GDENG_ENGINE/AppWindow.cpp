@@ -11,6 +11,13 @@
 #include "InputSystem.h"
 #include "SceneCameraHandler.h"
 
+#include "imgui.h"
+#include "imgui_impl_win32.h"
+#include "imgui_impl_dx11.h"
+
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
+
 __declspec(align(16))
 struct constant
 {
@@ -26,110 +33,7 @@ AppWindow::AppWindow()
 
 void AppWindow::update()
 {
-	m_angle += EngineTime::getDeltaTime();
-	constant cc;
-	cc.m_angle = m_angle;
 
-	/*m_delta_pos += EngineTime::getDeltaTime() / 5.0f;
-	if (m_delta_pos > 1.0f)
-		m_delta_pos = 0;*/
-
-	Matrix4x4 temp;
-
-	m_delta_scale += EngineTime::getDeltaTime() / 0.5f;
-	m_delta_pos += EngineTime::getDeltaTime() / 0.5f;
-
-	//cc.m_world.setTranslation(Vector3D::lerp(Vector3D(-1.5,-1.5,0),Vector3D(1.5,1.5,0), m_delta_pos));
-	//cc.m_world.setScale(Vector3D::lerp(Vector3D(0.5,0.5,0),Vector3D(2,2,0), (sin(m_delta_scale)+1.0f)/2.0f));
-
-	//temp.setTranslation(Vector3D::lerp(Vector3D(-1.5, -1.5, 0), Vector3D(1.5, 1.5, 0), m_delta_pos));
-
-	//cc.m_world *= temp;
-
-	/*cc.m_world.setScale(Vector3D(m_scale_cube, m_scale_cube, m_scale_cube));
-
-	temp.setIdentity();
-	temp.setRotationZ(0.0f);
-	cc.m_world *= temp;
-
-	temp.setIdentity();
-	temp.setRotationY(m_rot_y);
-	cc.m_world *= temp;
-
-	temp.setIdentity();
-	temp.setRotationX(m_rot_x);
-	cc.m_world *= temp;*/
-
-	cc.m_world.setIdentity();
-
-	Vector3D scale = Vector3D(1, 1, 1);
-	Vector3D trans = Vector3D(0, 0, 0);
-
-	temp.setIdentity();
-	temp.setScale(scale.lerp(Vector3D(1, 1, 1), Vector3D(5, 0, 5), (sin(m_delta_scale) + 1.0f) / 2.0f));
-	cc.m_world *= temp;
-
-	/*temp.setIdentity();
-	temp.setTranslation(trans.lerp(Vector3D(0, 0, 0), Vector3D(2, 2, 0), (sin(m_delta_scale) + 1.0f) / 2.0f));
-	cc.m_world *= temp;*/
-	
-
-
-	Matrix4x4 world_cam;
-	world_cam.setIdentity();
-
-	temp.setIdentity();
-	temp.setRotationX(m_rot_x);
-	world_cam *= temp;
-
-	temp.setIdentity();
-	temp.setRotationY(m_rot_y);
-	world_cam *= temp;
-
-	
-
-
-	/*m_delta_rot += 0.01f;
-	temp.setIdentity();
-	temp.setRotationZ(m_delta_rot);
-	cc.m_world *= temp;
-
-	temp.setIdentity();
-	temp.setRotationY(m_delta_rot);
-	cc.m_world *= temp;
-
-	temp.setIdentity();
-	temp.setRotationX(m_delta_rot);
-	cc.m_world *= temp;*/
-	
-	Vector3D new_pos = m_world_cam.getTranslation() + world_cam.getZDirection() * (m_forward * 0.3f);
-
-	new_pos = new_pos + world_cam.getXDirection() * (m_rightward * 0.3f);
-
-	world_cam.setTranslation(new_pos);
-
-	m_world_cam = world_cam;
-
-	world_cam.inverse();
-	
-
-	cc.m_view = world_cam;
-	/*cc.m_proj.setOrthoLH
-	(
-		(this->getClientWindowRect().right - this->getClientWindowRect().left)/400.0f,
-		(this->getClientWindowRect().bottom - this->getClientWindowRect().top)/400.0f,
-		-4.0f,
-		4.0f
-	);*/
-
-
-	int width = (this->getClientWindowRect().right - this->getClientWindowRect().left);
-	int height = (this->getClientWindowRect().bottom - this->getClientWindowRect().top);
-
-	cc.m_proj.setPerspectiveFovLH(1.57f, ((float)width / (float)height), 0.1f, 100.0f);
-	
-
-	m_cb->update(GraphicsEngine::get()->getImmediateDeviceContext(), &cc);
 }
 
 
@@ -141,16 +45,24 @@ void AppWindow::onCreate()
 {
 	EngineTime::initialize();
 	Window::onCreate();
-
-	InputSystem::initialize();
+	
 	SceneCameraHandler::initialize();
 	InputSystem::get()->addListener(this);
 
-	GraphicsEngine::get()->init();
-	m_swap_chain = GraphicsEngine::get()->createSwapChain();
-
 	RECT rc = this->getClientWindowRect();
-	m_swap_chain->init(this->m_hwnd, rc.right - rc.left, rc.bottom - rc.top);
+	m_swap_chain = GraphicsEngine::get()->getRenderSystem()->createSwapChain(this->m_hwnd, rc.right - rc.left, rc.bottom - rc.top);
+
+
+	//imgui
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+	ImGuiIO& io = ImGui::GetIO(); (void)io;
+
+	ImGui::StyleColorsDark();
+
+	ImGui_ImplWin32_Init(m_hwnd);
+	ImGui_ImplDX11_Init(GraphicsEngine::get()->getRenderSystem()->m_d3d_device, GraphicsEngine::get()->getRenderSystem()->m_imm_context);
+	
 
 	void* shaderByteCode = nullptr;
 	size_t sizeShader = 0;
@@ -160,7 +72,7 @@ void AppWindow::onCreate()
 
 	float aspect = (float)(rc.right - rc.left) / (float)(rc.bottom - rc.top);
 	static float nearZ = 1.0f;
-	static float farZ = 10;
+	static float farZ = 50.0f;
 
 	cam->setAspect(aspect);
 	cam->setFOV(aspect);
@@ -172,7 +84,13 @@ void AppWindow::onCreate()
 	sceneCam->setNearZ(1);
 	sceneCam->setFarZ(100);
 
-	SceneCameraHandler::getInstance()->SetSceneCamera(sceneCam);
+
+	SceneCameraHandler::getInstance()->SetCamera(cam);
+	SceneCameraHandler::getInstance()->SetActiveCamera(sceneCam);
+
+	/*frustum = new Frustum("Frustum", shaderByteCode, sizeShader);
+	frustum->setPosition(0.0f, 0.0f, -3.0f);
+	frustum->camera = cam;*/
 
 	//1
 	Cube* cube = new Cube("Card", shaderByteCode, sizeShader);
@@ -278,6 +196,39 @@ void AppWindow::onCreate()
 	cube->setScale(0.75, 0.001f, 1);
 	cube->setRotation(-1.25, 0, 0);
 	object_lists.push_back(cube);
+
+	int image_width = 0;
+    int image_height = 0;
+    unsigned char* image_data = stbi_load("DLSU_LOGO.png", &image_width, &image_height, NULL, 4);
+
+    // Create texture
+    D3D11_TEXTURE2D_DESC desc;
+    ZeroMemory(&desc, sizeof(desc));
+    desc.Width = image_width;
+    desc.Height = image_height;
+    desc.MipLevels = 1;
+    desc.ArraySize = 1;
+    desc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
+    desc.SampleDesc.Count = 1;
+    desc.Usage = D3D11_USAGE_DEFAULT;
+    desc.BindFlags = D3D11_BIND_SHADER_RESOURCE;
+    desc.CPUAccessFlags = 0;
+
+    ID3D11Texture2D* pTexture = NULL;
+    D3D11_SUBRESOURCE_DATA subResource;
+    subResource.pSysMem = image_data;
+    subResource.SysMemPitch = desc.Width * 4;
+    subResource.SysMemSlicePitch = 0;
+    GraphicsEngine::get()->getRenderSystem()->m_d3d_device->CreateTexture2D(&desc, &subResource, &pTexture);
+
+    D3D11_SHADER_RESOURCE_VIEW_DESC srvDesc;
+    ZeroMemory(&srvDesc, sizeof(srvDesc));
+    srvDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
+    srvDesc.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D;
+    srvDesc.Texture2D.MipLevels = desc.MipLevels;
+    srvDesc.Texture2D.MostDetailedMip = 0;
+    GraphicsEngine::get()->getRenderSystem()->m_d3d_device->CreateShaderResourceView(pTexture, &srvDesc, &texture);
+    pTexture->Release();
 
 	/*cube = new Cube("Cube", shaderByteCode, sizeShader);
 	cube->setPosition(0, 0, 0);
@@ -450,7 +401,7 @@ void AppWindow::onUpdate()
 	InputSystem::get()->update();
 
 	//CLEAR THE RENDER TARGET 
-	GraphicsEngine::get()->getImmediateDeviceContext()->clearRenderTargetColor(this->m_swap_chain,
+	GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext()->clearRenderTargetColor(this->m_swap_chain,
 		0, 0.3f,0.4f, 1);
 	//SET VIEWPORT OF RENDER TARGET IN WHICH WE HAVE TO DRAW
 	RECT rc = this->getClientWindowRect();
@@ -458,18 +409,75 @@ void AppWindow::onUpdate()
 	float width = rc.right - rc.left;
 	float height = rc.bottom - rc.top;
 
-	GraphicsEngine::get()->getImmediateDeviceContext()->setViewportSize(width, height);
+	GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext()->setViewportSize(width, height);
 
 	SceneCameraHandler::getInstance()->update();
 
 	Vector3D camPos = cam->getLocalPosition();
 	Vector3D camRot = cam->getLocalRotation();
 
-	for(int i = 0; i < object_lists.size(); i++)
+	
+
+	/*frustum->update(EngineTime::getDeltaTime());
+
+	if (!isUsingCameraObj)
+		frustum->draw(rc.right - rc.left, rc.bottom - rc.top);*/
+
+	for (int i = 0; i < object_lists.size(); i++)
 	{
 		object_lists[i]->update(EngineTime::getDeltaTime());
 		object_lists[i]->draw(width, height);
 	}
+
+	ImGui_ImplDX11_NewFrame();
+	ImGui_ImplWin32_NewFrame();
+	ImGui::NewFrame();
+
+
+	// Draw UI Here
+	static bool isCredits = false;
+	static bool isColor = false;
+
+	ImGui::BeginMainMenuBar();
+	if (ImGui::BeginMenu("About"))
+	{
+		if (ImGui::MenuItem("Credits"))
+		{
+			isCredits = true;
+		}
+		ImGui::EndMenu();
+	}
+	if (ImGui::MenuItem("ColorPicker"))
+	{
+		isColor = true;
+	}
+
+	ImGui::EndMainMenuBar();
+
+	if(isCredits)
+	{
+		ImGui::Begin("Credits", &isCredits);
+		ImGui::Image((void*)texture, { 300, 300 });
+		ImGui::Text("Made by: Ian Joshua Nemeno");
+		ImGui::Text("Submitted for: Sir Neil Del Gallego");
+		ImGui::Text("References: PardCode");
+		ImGui::End();
+	}
+
+	
+	static float* col = new float[3] {0, 0, 0};
+	if(isColor)
+	{
+		ImGui::Begin("Pick-A-Color", &isColor);
+		ImGuiColorEditFlags flags;
+		flags = ImGuiColorEditFlags_PickerHueWheel | ImGuiColorEditFlags_NoInputs;
+
+		ImGui::ColorPicker4("Color", col, flags);
+		ImGui::End();
+	}
+
+	ImGui::Render();
+	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
 
 	//GraphicsEngine::get()->getImmediateDeviceContext()->setConstantBuffer(m_vs, m_cb);
 	//GraphicsEngine::get()->getImmediateDeviceContext()->setConstantBuffer(m_ps, m_cb);
@@ -505,26 +513,6 @@ void AppWindow::onUpdate()
 void AppWindow::onDestroy()
 {
 	Window::onDestroy();
-	m_swap_chain->release();
-	GraphicsEngine::get()->release();
-
-	if (m_vb != NULL)
-		m_vb->release();
-	if (m_ib != NULL)
-		m_ib->release();
-	if (m_cb != NULL)
-		m_cb->release();
-	if (m_vs != NULL)
-		m_vs->release();
-	if (m_ps != NULL)
-		m_ps->release();
-
-	quad.onDestroy();
-	improvedLine.onDestroy();
-	improvedLine1.onDestroy();
-	improvedLine2.onDestroy();
-	improvedLine3.onDestroy();
-	improvedLine4.onDestroy();
 }
 
 void AppWindow::onFocus()
@@ -558,6 +546,19 @@ void AppWindow::onKeyDown(int key)
 	{
 		//m_rot_y -= 0.707f * EngineTime::getDeltaTime();
 		m_rightward = 1.0f;
+	}
+	else if (key == 9)
+	{
+		isUsingCameraObj = !isUsingCameraObj;
+
+		if(isUsingCameraObj)
+		{
+			SceneCameraHandler::getInstance()->SetActiveCamera(cam);
+		}
+		else if(!isUsingCameraObj)
+		{
+			SceneCameraHandler::getInstance()->SetActiveCamera(sceneCam);
+		}
 	}
 }
 

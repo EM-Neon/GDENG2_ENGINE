@@ -7,24 +7,67 @@
 
 #include "SwapChain.h"
 
-Cube::Cube(string name, void* shaderByteCode, size_t sizeShader): AGameObject(name)
+Cube::Cube(std::string name, void* shaderByteCode, size_t sizeShader): AGameObject(name)
 {
-	sceneCamera = SceneCameraHandler::getInstance()->getSceneCamera();
+	sceneCamera = SceneCameraHandler::getInstance()->getActiveCamera();
 
-	Vertex::vertex vertex_list[] = 
+	Vector3D position_list[] =
 	{
 		//X, Y, Z
 		//FRONT FACE
-		{Vector3D(-0.5f,-0.5f,-0.5f),    Vector3D(1,1,1), Vector3D(1,1,1) },
-		{Vector3D(-0.5f,0.5f,-0.5f),     Vector3D(1,1,1), Vector3D(1,1,1) },
-		{Vector3D(0.5f,0.5f,-0.5f),      Vector3D(0,0,0), Vector3D(0,0,0) },
-		{Vector3D(0.5f,-0.5f,-0.5f),     Vector3D(0,0,0), Vector3D(0,0,0) },
+		{Vector3D(-0.5f,-0.5f,-0.5f)},
+		{Vector3D(-0.5f,0.5f,-0.5f)},
+		{Vector3D(0.5f,0.5f,-0.5f)},
+		{Vector3D(0.5f,-0.5f,-0.5f)},
 
 		//BACK FACE
-		{Vector3D(0.5f,-0.5f,0.5f),      Vector3D(1,1,1), Vector3D(1,1,1) },
-		{Vector3D(0.5f,0.5f,0.5f),       Vector3D(1,1,1), Vector3D(1,1,1) },
-		{Vector3D(-0.5f,0.5f,0.5f),      Vector3D(0,0,0), Vector3D(0,0,0) },
-		{Vector3D(-0.5f,-0.5f,0.5f),     Vector3D(0,0,0), Vector3D(0,0,0) },
+		{Vector3D(0.5f,-0.5f,0.5f)},
+		{Vector3D(0.5f,0.5f,0.5f)},
+		{Vector3D(-0.5f,0.5f,0.5f)},
+		{Vector3D(-0.5f,-0.5f,0.5f)},
+	};
+
+	Vector2D texcoord_list[] =
+	{
+		//X, Y, Z
+		//FRONT FACE
+		{Vector2D(0,0)},
+		{Vector2D(0,1)},
+		{Vector2D(1,0)},
+		{Vector2D(1,1)},
+	};
+
+	Vertex::vertex vertex_list[] = 
+	{
+		{position_list[0], texcoord_list[1]},
+		{position_list[1], texcoord_list[0]},
+		{position_list[2], texcoord_list[2]},
+		{position_list[3], texcoord_list[3]},
+
+		{position_list[4], texcoord_list[1]},
+		{position_list[5], texcoord_list[0]},
+		{position_list[6], texcoord_list[2]},
+		{position_list[7], texcoord_list[3]},
+
+		{position_list[1], texcoord_list[1]},
+		{position_list[6], texcoord_list[0]},
+		{position_list[5], texcoord_list[2]},
+		{position_list[2], texcoord_list[3]},
+
+		{position_list[7], texcoord_list[1]},
+		{position_list[0], texcoord_list[0]},
+		{position_list[3], texcoord_list[2]},
+		{position_list[4], texcoord_list[3]},
+
+		{position_list[3], texcoord_list[1]},
+		{position_list[2], texcoord_list[0]},
+		{position_list[5], texcoord_list[2]},
+		{position_list[4], texcoord_list[3]},
+
+		{position_list[7], texcoord_list[1]},
+		{position_list[6], texcoord_list[0]},
+		{position_list[1], texcoord_list[2]},
+		{position_list[0], texcoord_list[3]},
 	};
 
 	unsigned int index_list[] =
@@ -36,48 +79,42 @@ Cube::Cube(string name, void* shaderByteCode, size_t sizeShader): AGameObject(na
 		4,5,6,
 		6,7,4,
 		//TOP SIDE
-		1,6,5,
-		5,2,1,
+		8,9,10,
+		10,11,8,
 		//BOTTOM SIDE
-		7,0,3,
-		3,4,7,
+		12,13,14,
+		14,15,12,
 		//RIGHT SIDE
-		3,2,5,
-		5,4,3,
+		16,17,18,
+		18,19,16,
 		//LEFT SIDE
-		7,6,1,
-		1,0,7
+		20,21,22,
+		22,23,20
 	};
 
-	ib = GraphicsEngine::get()->createIndexBuffer();
-	ib->load(index_list, ARRAYSIZE(index_list));
+	ib = GraphicsEngine::get()->getRenderSystem()->createIndexBuffer(index_list, ARRAYSIZE(index_list));
 
-	GraphicsEngine::get()->compileVertexShader(L"VertexShader.hlsl", "vsmain", &shaderByteCode, &sizeShader);
-	vs = GraphicsEngine::get()->createVertexShader(shaderByteCode, sizeShader);
+	GraphicsEngine::get()->getRenderSystem()->compileVertexShader(L"VertexShader.hlsl", "vsmain", &shaderByteCode, &sizeShader);
+	vs = GraphicsEngine::get()->getRenderSystem()->createVertexShader(shaderByteCode, sizeShader);
 
-	vb = GraphicsEngine::get()->createVertexBuffer();
-	vb->load(vertex_list, sizeof(Vertex::vertex), ARRAYSIZE(vertex_list), shaderByteCode, sizeShader);
+	vb = GraphicsEngine::get()->getRenderSystem()->createVertexBuffer(vertex_list, sizeof(Vertex::vertex), ARRAYSIZE(vertex_list), shaderByteCode, sizeShader);
 
-	GraphicsEngine::get()->releaseCompiledShader();
+	GraphicsEngine::get()->getRenderSystem()->releaseCompiledShader();
 
-	GraphicsEngine::get()->compilePixelShader(L"PixelShader.hlsl", "psmain", &shaderByteCode, &sizeShader);
-	ps = GraphicsEngine::get()->createPixelShader(shaderByteCode, sizeShader);
-	GraphicsEngine::get()->releaseCompiledShader();
+	GraphicsEngine::get()->getRenderSystem()->compilePixelShader(L"PixelShader.hlsl", "psmain", &shaderByteCode, &sizeShader);
+	ps = GraphicsEngine::get()->getRenderSystem()->createPixelShader(shaderByteCode, sizeShader);
+	GraphicsEngine::get()->getRenderSystem()->releaseCompiledShader();
 
 	constant cc;
 	cc.m_angle = 0;
 
-	cb = GraphicsEngine::get()->createConstantBuffer();
-	cb->load(&cc, sizeof(constant));
+	cb = GraphicsEngine::get()->getRenderSystem()->createConstantBuffer(&cc, sizeof(constant));
+
+	m_wood_tex = GraphicsEngine::get()->getTextureManager()->createTextureFromFile(L"Assets\\Textures\\wood.jpg");
 }
 
 Cube::~Cube()
 {
-	this->vb->release();
-	this->ib->release();
-	this->cb->release();
-	this->ps->release();
-	this->vs->release();
 	AGameObject::~AGameObject();
 }
 
@@ -105,7 +142,7 @@ void Cube::draw(int width, int height)
 	}
 
 	GraphicsEngine* engine = GraphicsEngine::get();
-	DeviceContext* device = GraphicsEngine::get()->getImmediateDeviceContext();
+	DeviceContextPtr device = GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext();
 
 	constant cc;
 	Matrix4x4 temp;
@@ -142,30 +179,46 @@ void Cube::draw(int width, int height)
 
 	cc.m_world = temp;
 
-	cc.m_view = SceneCameraHandler::getInstance()->getSceneCameraWorldCamMatrix();
-
-	float aspec = (float)width / (float)height;
-	sceneCamera = SceneCameraHandler::getInstance()->getSceneCamera();
+	sceneCamera = SceneCameraHandler::getInstance()->getActiveCamera();
 
 	float fov = sceneCamera->getFOV();
 	float asp = sceneCamera->getAspectRatio();
 	float nz = sceneCamera->getNearZ();
 	float fz = sceneCamera->getFarZ();
 
+	if (SceneCameraHandler::getInstance()->getActiveCamera() != SceneCameraHandler::getInstance()->getCamera())
+	{
+		cc.m_world *= SceneCameraHandler::getInstance()->getCameraWorldCamMatrix();
+
+		Matrix4x4 proj;
+		proj.setPerspectiveFovLH(fov, asp, nz, fz);
+
+		cc.m_world *= proj;
+	}
+
+	float aspec = (float)width / (float)height;
+	
+
+	cc.m_view = SceneCameraHandler::getInstance()->getActiveCameraWorldCamMatrix();
+
 	cc.m_proj.setPerspectiveFovLH(fov, asp, nz, fz);
 
-	cb->update(GraphicsEngine::get()->getImmediateDeviceContext(), &cc);
+	
 
-	GraphicsEngine::get()->getImmediateDeviceContext()->setConstantBuffer(vs, cb);
-	GraphicsEngine::get()->getImmediateDeviceContext()->setConstantBuffer(ps, cb);
+	cb->update(GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext(), &cc);
 
-	GraphicsEngine::get()->getImmediateDeviceContext()->setVertexShader(vs);
-	GraphicsEngine::get()->getImmediateDeviceContext()->setPixelShader(ps);
+	GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext()->setConstantBuffer(vs, cb);
+	GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext()->setConstantBuffer(ps, cb);
 
-	GraphicsEngine::get()->getImmediateDeviceContext()->setVertexBuffer(vb);
-	GraphicsEngine::get()->getImmediateDeviceContext()->setIndexBuffer(ib);
+	GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext()->setVertexShader(vs);
+	GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext()->setPixelShader(ps);
 
-	GraphicsEngine::get()->getImmediateDeviceContext()->drawIndexedTriangleList(ib->getSizeIndexList(), vb->getSizeVertexList(), 0, 0);
+	GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext()->setTexture(ps, m_wood_tex);
+
+	GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext()->setVertexBuffer(vb);
+	GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext()->setIndexBuffer(ib);
+
+	GraphicsEngine::get()->getRenderSystem()->getImmediateDeviceContext()->drawIndexedTriangleList(ib->getSizeIndexList(), vb->getSizeVertexList(), 0, 0);
 
 }
 

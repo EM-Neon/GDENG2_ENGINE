@@ -9,10 +9,12 @@ typedef std::vector<InputListener*> List;
 
 class InputSystem
 {
-public:
+private:
 	InputSystem();
 	~InputSystem();
 	InputSystem(InputSystem const&) {};
+
+public:
 	InputSystem& operator=(InputSystem const&) {};
 
 	void update();

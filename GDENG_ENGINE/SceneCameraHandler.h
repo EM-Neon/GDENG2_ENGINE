@@ -10,12 +10,16 @@ public:
 
 	void update();
 
-	Matrix4x4 getSceneCameraViewMatrix();
-	Matrix4x4 getSceneCameraWorldCamMatrix();
-	Camera* getSceneCamera();
+	Matrix4x4 getActiveCameraViewMatrix();
+	Matrix4x4 getActiveCameraWorldCamMatrix();
 
-	void SetSceneCamera(Camera* objCamera);
-	Camera* objCamera;
+	Matrix4x4 getCameraWorldCamMatrix();
+
+	Camera* getActiveCamera();
+	Camera* getCamera();
+
+	void SetActiveCamera(Camera* objCamera);
+	void SetCamera(Camera* camera);
 
 private:
 	SceneCameraHandler();
@@ -24,6 +28,7 @@ private:
 	SceneCameraHandler& operator = (SceneCameraHandler const&){};
 	static SceneCameraHandler* sharedInstance;
 
-	Camera* sceneCamera;
+	Camera* activeCamera;
+	Camera* camera;
 };
 

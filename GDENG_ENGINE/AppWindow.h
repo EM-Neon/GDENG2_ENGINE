@@ -12,12 +12,10 @@
 #include "Camera.h"
 
 #include "ConstantBuffer.h"
-#include "Quad.h"
-#include "Line.h"
-#include "ImprovedLine.h"
 #include <vector>
 
 #include "Cube.h"
+//#include "Frustum.h"
 
 class GraphicsEngine;
 
@@ -48,15 +46,13 @@ public:
 	virtual void onRightMouseUp(const Point delta_mouse_pos) override;
 
 private:
-	SwapChain * m_swap_chain;
-	VertexBuffer* m_vb;
-	VertexBuffer* m_vb2;
-	VertexBuffer* m_vb3;
-	VertexShader* m_vs;
-	PixelShader* m_ps;
-	ConstantBuffer* m_cb;
-	IndexBuffer* m_ib;
-	IndexBuffer* m_ib1;
+	SwapChainPtr m_swap_chain;
+	VertexBufferPtr m_vb;
+	VertexShaderPtr m_vs;
+	PixelShaderPtr m_ps;
+	ConstantBufferPtr m_cb;
+	IndexBufferPtr m_ib;
+	TexturePtr m_wood_tex;
 
 private:
 	unsigned long m_old_time = 0;
@@ -75,16 +71,13 @@ private:
 	Matrix4x4 m_world_cam;
 
 private:
-	Quad quad;
-	ImprovedLine improvedLine;
-	ImprovedLine improvedLine1;
-	ImprovedLine improvedLine2;
-	ImprovedLine improvedLine3;
-	ImprovedLine improvedLine4;
+	ID3D11ShaderResourceView* texture = nullptr;
 
 	Camera* cam;
 	Camera* sceneCam;
 	bool isUsingCameraObj = false;
+
+	//Frustum* frustum;
 
 	Cube* cube;
 	Cube* cube2;

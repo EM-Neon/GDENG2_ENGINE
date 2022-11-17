@@ -11,7 +11,7 @@
 class Cube: public AGameObject
 {
 public:
-	Cube(string name, void* shaderByteCode, size_t sizeShader);
+	Cube(std::string name, void* shaderByteCode, size_t sizeShader);
 	~Cube();
 
 	void update(float deltaTime) override;
@@ -23,12 +23,14 @@ public:
 	float m_rightward = 0.0f;
 
 private:
-	VertexBuffer* vb;
-	IndexBuffer* ib;
-	ConstantBuffer* cb;
+	VertexBufferPtr vb;
+	IndexBufferPtr ib;
+	ConstantBufferPtr cb;
 
-	VertexShader* vs;
-	PixelShader* ps;
+	VertexShaderPtr vs;
+	PixelShaderPtr ps;
+
+	TexturePtr m_wood_tex;
 
 	float ticks = 0;
 	float deltaPos = 0;

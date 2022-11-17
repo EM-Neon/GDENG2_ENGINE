@@ -1,4 +1,6 @@
 #pragma once
+#include <string>
+
 #include "AGameObject.h"
 #include "InputListener.h"
 #include "Vector3D.h"
@@ -13,7 +15,7 @@
 class Camera: public AGameObject, public InputListener
 {
 public:
-	Camera(string name);
+	Camera(std::string name);
 	~Camera();
 
 	void update(float deltaTime) override;

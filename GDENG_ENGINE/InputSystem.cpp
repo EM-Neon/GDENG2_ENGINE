@@ -1,6 +1,6 @@
 #include "InputSystem.h"
 
-InputSystem* InputSystem::sharedInstance = NULL;
+InputSystem* InputSystem::sharedInstance = nullptr;
 
 InputSystem::InputSystem()
 {
@@ -10,6 +10,7 @@ InputSystem::InputSystem()
 InputSystem::~InputSystem()
 {
 	this->inputListenersList.clear();
+	InputSystem::sharedInstance = nullptr;
 }
 
 void InputSystem::update()
@@ -196,15 +197,14 @@ void InputSystem::onRightMouseUp(Point deltaPt)
 
 void InputSystem::initialize()
 {
-	sharedInstance = new InputSystem();
+	if (InputSystem::sharedInstance) throw std::exception("InputSystem already created");
+	InputSystem::sharedInstance = new InputSystem();
 }
 
 void InputSystem::destroy()
 {
-	if(sharedInstance != NULL)
-	{
-		delete sharedInstance;
-	}
+	if (!InputSystem::sharedInstance) return;
+	delete InputSystem::sharedInstance;
 }
 
 InputSystem* InputSystem::get()

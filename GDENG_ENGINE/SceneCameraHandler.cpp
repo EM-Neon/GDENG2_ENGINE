@@ -20,39 +20,54 @@ void SceneCameraHandler::destroy()
 
 void SceneCameraHandler::update()
 {
-    this->sceneCamera->update(EngineTime::getDeltaTime());
+    this->activeCamera->update(EngineTime::getDeltaTime());
 }
 
-Matrix4x4 SceneCameraHandler::getSceneCameraViewMatrix()
+Matrix4x4 SceneCameraHandler::getActiveCameraViewMatrix()
 {
-    return this->sceneCamera->getVMatrix();
+    return this->activeCamera->getVMatrix();
 }
 
-Matrix4x4 SceneCameraHandler::getSceneCameraWorldCamMatrix()
+Matrix4x4 SceneCameraHandler::getActiveCameraWorldCamMatrix()
 {
-    return this->sceneCamera->getViewMatrix();
+    return this->activeCamera->getViewMatrix();
 }
 
-Camera* SceneCameraHandler::getSceneCamera()
+Matrix4x4 SceneCameraHandler::getCameraWorldCamMatrix()
 {
-    return this->sceneCamera;
+    return this->camera->getViewMatrix();
 }
 
-void SceneCameraHandler::SetSceneCamera(Camera* objCamera)
+Camera* SceneCameraHandler::getActiveCamera()
 {
-    if (sceneCamera)
-        this->sceneCamera->setCameraStatus(false);
-    this->sceneCamera = objCamera;
-    this->sceneCamera->setCameraStatus(true);
+    return this->activeCamera;
+}
+
+Camera* SceneCameraHandler::getCamera()
+{
+    return this->camera;
+}
+
+void SceneCameraHandler::SetActiveCamera(Camera* cameraObject)
+{
+    if (activeCamera)
+        this->activeCamera->setCameraStatus(false);
+    this->activeCamera = cameraObject;
+    this->activeCamera->setCameraStatus(true);
+}
+
+void SceneCameraHandler::SetCamera(Camera* camera)
+{
+    this->camera = camera;
 }
 
 SceneCameraHandler::SceneCameraHandler()
 {
-    this->sceneCamera = new Camera("SceneCamera");
+    this->activeCamera = new Camera("ActiveCamera");
 
 }
 
 SceneCameraHandler::~SceneCameraHandler()
 {
-    delete this->sceneCamera;
+    delete this->activeCamera;
 }
