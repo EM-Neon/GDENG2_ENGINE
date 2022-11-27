@@ -37,7 +37,7 @@ public:
 	void onRightMouseUp(Point deltaPt);
 
 	static InputSystem* sharedInstance;
-	List inputListenersList;
+	std::vector<InputListener*> inputListenersList;
 
 public:
 	static InputSystem* get();

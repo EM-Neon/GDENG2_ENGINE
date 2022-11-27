@@ -1,4 +1,5 @@
-﻿  AppWindow.cpp
+﻿  AComponent.cpp
+  AGameObject.cpp
 C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(39,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(40,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(41,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
@@ -15,34 +16,728 @@ C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(102,44): war
 C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(103,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(104,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(105,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(155,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Quad.h(42,13): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Line.h(35,13): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\ImprovedLine.h(37,13): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(166,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\CollisionCallback.h(300,73): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\OverlapCallback.h(189,73): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\OverlapCallback.h(207,123): warning C4267: 'argument': conversion from 'size_t' to 'const reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifold.h(37,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifoldInfo.h(42): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifold.h(37): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(129,37): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseAlgorithm.h(36,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\Islands.h(94,1): warning C4267: 'initializing': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\utils\DebugRenderer.h(267,22): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\utils\DebugRenderer.h(291,26): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\PhysicsWorld.h(710,34): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\PhysicsWorld.h(718,30): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\HalfEdgeStructure.h(135,32): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\HeightFieldShape.h(197,104): warning C4244: 'return': conversion from 'double' to 'reactphysics3d::decimal', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\HeightFieldShape.h(205,19): warning C4244: 'return': conversion from 'reactphysics3d::decimal' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\TriangleMesh.h(100,34): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Map.h(503,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Map.h(435): message : while compiling class template member function 'void reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>::add(const reactphysics3d::Pair<K,reactphysics3d::Entity> &,bool)'
+          with
+          [
+              V=int,
+              K=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(398): message : see reference to function template instantiation 'void reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>::add(const reactphysics3d::Pair<K,reactphysics3d::Entity> &,bool)' being compiled
+          with
+          [
+              V=int,
+              K=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(102): message : see reference to class template instantiation 'reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>' being compiled
+          with
+          [
+              V=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Set.h(480,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Set.h(425): message : while compiling class template member function 'bool reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>::add(const V &)'
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(403): message : see reference to function template instantiation 'bool reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>::add(const V &)' being compiled
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(93): message : see reference to class template instantiation 'reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>' being compiled
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(331,1): warning C4267: 'argument': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(329): message : while compiling class template member function 'reactphysics3d::List<reactphysics3d::Collider *>::Iterator reactphysics3d::List<reactphysics3d::Collider *>::remove(const reactphysics3d::List<reactphysics3d::Collider *>::Iterator &)'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(324): message : see reference to function template instantiation 'reactphysics3d::List<reactphysics3d::Collider *>::Iterator reactphysics3d::List<reactphysics3d::Collider *>::remove(const reactphysics3d::List<reactphysics3d::Collider *>::Iterator &)' being compiled
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\CollisionShape.h(80): message : see reference to class template instantiation 'reactphysics3d::List<reactphysics3d::Collider *>' being compiled
+  AppWindow.cpp
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Window.h(2,1): warning C4005: 'NOMINMAX': macro redefinition
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Window.h(2,1): message : 'NOMINMAX' previously declared on the command line
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(102,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(103,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(104,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(105,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\CollisionCallback.h(300,73): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\OverlapCallback.h(189,73): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\OverlapCallback.h(207,123): warning C4267: 'argument': conversion from 'size_t' to 'const reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifold.h(37,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifoldInfo.h(42): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifold.h(37): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(129,37): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseAlgorithm.h(36,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\Islands.h(94,1): warning C4267: 'initializing': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\utils\DebugRenderer.h(267,22): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\utils\DebugRenderer.h(291,26): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\PhysicsWorld.h(710,34): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\PhysicsWorld.h(718,30): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\HalfEdgeStructure.h(135,32): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\HeightFieldShape.h(197,104): warning C4244: 'return': conversion from 'double' to 'reactphysics3d::decimal', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\HeightFieldShape.h(205,19): warning C4244: 'return': conversion from 'reactphysics3d::decimal' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\TriangleMesh.h(100,34): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
 C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Utils.h(67,17): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
 C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Utils.h(72,18): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(29,37): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(39,46): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(40,44): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(186,31): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(193,31): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(200,36): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(207,44): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(214,52): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(221,34): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(228,39): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(235,34): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(242,40): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(249,48): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(256,55): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(263,48): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(270,46): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(277,54): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(458,14): warning C4244: 'initializing': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(459,15): warning C4244: 'initializing': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(461,77): warning C4244: 'argument': conversion from 'float' to 'UINT', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(461,70): warning C4244: 'argument': conversion from 'float' to 'UINT', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(470,51): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(471,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(471,25): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(107,31): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(114,31): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(121,36): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(128,44): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(135,52): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(142,34): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(149,39): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(156,34): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(163,40): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(170,48): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(177,55): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(184,48): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(191,46): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(198,54): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(416,14): warning C4244: 'initializing': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(417,15): warning C4244: 'initializing': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(419,96): warning C4244: 'argument': conversion from 'float' to 'UINT', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(419,89): warning C4244: 'argument': conversion from 'float' to 'UINT', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(435,51): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(436,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\AppWindow.cpp(436,25): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Map.h(503,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Map.h(435): message : while compiling class template member function 'void reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>::add(const reactphysics3d::Pair<K,reactphysics3d::Entity> &,bool)'
+          with
+          [
+              V=int,
+              K=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(398): message : see reference to function template instantiation 'void reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>::add(const reactphysics3d::Pair<K,reactphysics3d::Entity> &,bool)' being compiled
+          with
+          [
+              V=int,
+              K=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(102): message : see reference to class template instantiation 'reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>' being compiled
+          with
+          [
+              V=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Set.h(480,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Set.h(425): message : while compiling class template member function 'bool reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>::add(const V &)'
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(403): message : see reference to function template instantiation 'bool reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>::add(const V &)' being compiled
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(93): message : see reference to class template instantiation 'reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>' being compiled
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(331,1): warning C4267: 'argument': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(329): message : while compiling class template member function 'reactphysics3d::List<reactphysics3d::Collider *>::Iterator reactphysics3d::List<reactphysics3d::Collider *>::remove(const reactphysics3d::List<reactphysics3d::Collider *>::Iterator &)'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(324): message : see reference to function template instantiation 'reactphysics3d::List<reactphysics3d::Collider *>::Iterator reactphysics3d::List<reactphysics3d::Collider *>::remove(const reactphysics3d::List<reactphysics3d::Collider *>::Iterator &)' being compiled
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\CollisionShape.h(80): message : see reference to class template instantiation 'reactphysics3d::List<reactphysics3d::Collider *>' being compiled
+  BaseComponentSystem.cpp
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\CollisionCallback.h(300,73): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\OverlapCallback.h(189,73): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\OverlapCallback.h(207,123): warning C4267: 'argument': conversion from 'size_t' to 'const reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifold.h(37,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifoldInfo.h(42): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifold.h(37): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(129,37): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseAlgorithm.h(36,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\Islands.h(94,1): warning C4267: 'initializing': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\utils\DebugRenderer.h(267,22): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\utils\DebugRenderer.h(291,26): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\PhysicsWorld.h(710,34): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\PhysicsWorld.h(718,30): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\HalfEdgeStructure.h(135,32): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\HeightFieldShape.h(197,104): warning C4244: 'return': conversion from 'double' to 'reactphysics3d::decimal', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\HeightFieldShape.h(205,19): warning C4244: 'return': conversion from 'reactphysics3d::decimal' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\TriangleMesh.h(100,34): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Map.h(503,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Map.h(435): message : while compiling class template member function 'void reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>::add(const reactphysics3d::Pair<K,reactphysics3d::Entity> &,bool)'
+          with
+          [
+              V=int,
+              K=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(398): message : see reference to function template instantiation 'void reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>::add(const reactphysics3d::Pair<K,reactphysics3d::Entity> &,bool)' being compiled
+          with
+          [
+              V=int,
+              K=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(102): message : see reference to class template instantiation 'reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>' being compiled
+          with
+          [
+              V=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Set.h(480,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Set.h(425): message : while compiling class template member function 'bool reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>::add(const V &)'
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(403): message : see reference to function template instantiation 'bool reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>::add(const V &)' being compiled
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(93): message : see reference to class template instantiation 'reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>' being compiled
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(331,1): warning C4267: 'argument': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(329): message : while compiling class template member function 'reactphysics3d::List<reactphysics3d::Collider *>::Iterator reactphysics3d::List<reactphysics3d::Collider *>::remove(const reactphysics3d::List<reactphysics3d::Collider *>::Iterator &)'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(324): message : see reference to function template instantiation 'reactphysics3d::List<reactphysics3d::Collider *>::Iterator reactphysics3d::List<reactphysics3d::Collider *>::remove(const reactphysics3d::List<reactphysics3d::Collider *>::Iterator &)' being compiled
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\CollisionShape.h(80): message : see reference to class template instantiation 'reactphysics3d::List<reactphysics3d::Collider *>' being compiled
+  Camera.cpp
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(39,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(40,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(41,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(42,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(47,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(48,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(49,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(50,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(55,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(56,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(57,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(58,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(102,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(103,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(104,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(105,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(166,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\CollisionCallback.h(300,73): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\OverlapCallback.h(189,73): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\OverlapCallback.h(207,123): warning C4267: 'argument': conversion from 'size_t' to 'const reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifold.h(37,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifoldInfo.h(42): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifold.h(37): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(129,37): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseAlgorithm.h(36,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\Islands.h(94,1): warning C4267: 'initializing': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\utils\DebugRenderer.h(267,22): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\utils\DebugRenderer.h(291,26): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\PhysicsWorld.h(710,34): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\PhysicsWorld.h(718,30): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\HalfEdgeStructure.h(135,32): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\HeightFieldShape.h(197,104): warning C4244: 'return': conversion from 'double' to 'reactphysics3d::decimal', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\HeightFieldShape.h(205,19): warning C4244: 'return': conversion from 'reactphysics3d::decimal' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\TriangleMesh.h(100,34): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Utils.h(67,17): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Utils.h(72,18): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Camera.cpp(178,56): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Camera.cpp(179,56): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Map.h(503,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Map.h(435): message : while compiling class template member function 'void reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>::add(const reactphysics3d::Pair<K,reactphysics3d::Entity> &,bool)'
+          with
+          [
+              V=int,
+              K=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(398): message : see reference to function template instantiation 'void reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>::add(const reactphysics3d::Pair<K,reactphysics3d::Entity> &,bool)' being compiled
+          with
+          [
+              V=int,
+              K=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(102): message : see reference to class template instantiation 'reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>' being compiled
+          with
+          [
+              V=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Set.h(480,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Set.h(425): message : while compiling class template member function 'bool reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>::add(const V &)'
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(403): message : see reference to function template instantiation 'bool reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>::add(const V &)' being compiled
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(93): message : see reference to class template instantiation 'reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>' being compiled
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(331,1): warning C4267: 'argument': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(329): message : while compiling class template member function 'reactphysics3d::List<reactphysics3d::Collider *>::Iterator reactphysics3d::List<reactphysics3d::Collider *>::remove(const reactphysics3d::List<reactphysics3d::Collider *>::Iterator &)'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(324): message : see reference to function template instantiation 'reactphysics3d::List<reactphysics3d::Collider *>::Iterator reactphysics3d::List<reactphysics3d::Collider *>::remove(const reactphysics3d::List<reactphysics3d::Collider *>::Iterator &)' being compiled
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\CollisionShape.h(80): message : see reference to class template instantiation 'reactphysics3d::List<reactphysics3d::Collider *>' being compiled
+  ConstantBuffer.cpp
+  Cube.cpp
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(39,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(40,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(41,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(42,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(47,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(48,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(49,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(50,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(55,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(56,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(57,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(58,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(102,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(103,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(104,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(105,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(166,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\CollisionCallback.h(300,73): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\OverlapCallback.h(189,73): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\OverlapCallback.h(207,123): warning C4267: 'argument': conversion from 'size_t' to 'const reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifold.h(37,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifoldInfo.h(42): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifold.h(37): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(129,37): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseAlgorithm.h(36,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\Islands.h(94,1): warning C4267: 'initializing': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\utils\DebugRenderer.h(267,22): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\utils\DebugRenderer.h(291,26): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\PhysicsWorld.h(710,34): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\PhysicsWorld.h(718,30): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\HalfEdgeStructure.h(135,32): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\HeightFieldShape.h(197,104): warning C4244: 'return': conversion from 'double' to 'reactphysics3d::decimal', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\HeightFieldShape.h(205,19): warning C4244: 'return': conversion from 'reactphysics3d::decimal' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\TriangleMesh.h(100,34): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Map.h(503,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Map.h(435): message : while compiling class template member function 'void reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>::add(const reactphysics3d::Pair<K,reactphysics3d::Entity> &,bool)'
+          with
+          [
+              V=int,
+              K=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(398): message : see reference to function template instantiation 'void reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>::add(const reactphysics3d::Pair<K,reactphysics3d::Entity> &,bool)' being compiled
+          with
+          [
+              V=int,
+              K=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(102): message : see reference to class template instantiation 'reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>' being compiled
+          with
+          [
+              V=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Set.h(480,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Set.h(425): message : while compiling class template member function 'bool reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>::add(const V &)'
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(403): message : see reference to function template instantiation 'bool reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>::add(const V &)' being compiled
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(93): message : see reference to class template instantiation 'reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>' being compiled
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(331,1): warning C4267: 'argument': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(329): message : while compiling class template member function 'reactphysics3d::List<reactphysics3d::Collider *>::Iterator reactphysics3d::List<reactphysics3d::Collider *>::remove(const reactphysics3d::List<reactphysics3d::Collider *>::Iterator &)'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(324): message : see reference to function template instantiation 'reactphysics3d::List<reactphysics3d::Collider *>::Iterator reactphysics3d::List<reactphysics3d::Collider *>::remove(const reactphysics3d::List<reactphysics3d::Collider *>::Iterator &)' being compiled
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\CollisionShape.h(80): message : see reference to class template instantiation 'reactphysics3d::List<reactphysics3d::Collider *>' being compiled
+  DeviceContext.cpp
+  EngineTime.cpp
+  GraphicsEngine.cpp
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_impl_dx11.cpp
+  imgui_impl_win32.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+  IndexBuffer.cpp
+  InputSystem.cpp
+  main.cpp
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Window.h(2,1): warning C4005: 'NOMINMAX': macro redefinition
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Window.h(2,1): message : 'NOMINMAX' previously declared on the command line
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(102,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(103,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(104,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(105,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\CollisionCallback.h(300,73): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\OverlapCallback.h(189,73): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\OverlapCallback.h(207,123): warning C4267: 'argument': conversion from 'size_t' to 'const reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifold.h(37,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifoldInfo.h(42): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifold.h(37): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(129,37): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseAlgorithm.h(36,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\Islands.h(94,1): warning C4267: 'initializing': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\utils\DebugRenderer.h(267,22): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\utils\DebugRenderer.h(291,26): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\PhysicsWorld.h(710,34): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\PhysicsWorld.h(718,30): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\HalfEdgeStructure.h(135,32): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\HeightFieldShape.h(197,104): warning C4244: 'return': conversion from 'double' to 'reactphysics3d::decimal', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\HeightFieldShape.h(205,19): warning C4244: 'return': conversion from 'reactphysics3d::decimal' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\TriangleMesh.h(100,34): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Map.h(503,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Map.h(435): message : while compiling class template member function 'void reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>::add(const reactphysics3d::Pair<K,reactphysics3d::Entity> &,bool)'
+          with
+          [
+              V=int,
+              K=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(398): message : see reference to function template instantiation 'void reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>::add(const reactphysics3d::Pair<K,reactphysics3d::Entity> &,bool)' being compiled
+          with
+          [
+              V=int,
+              K=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(102): message : see reference to class template instantiation 'reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>' being compiled
+          with
+          [
+              V=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Set.h(480,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Set.h(425): message : while compiling class template member function 'bool reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>::add(const V &)'
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(403): message : see reference to function template instantiation 'bool reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>::add(const V &)' being compiled
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(93): message : see reference to class template instantiation 'reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>' being compiled
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(331,1): warning C4267: 'argument': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(329): message : while compiling class template member function 'reactphysics3d::List<reactphysics3d::Collider *>::Iterator reactphysics3d::List<reactphysics3d::Collider *>::remove(const reactphysics3d::List<reactphysics3d::Collider *>::Iterator &)'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(324): message : see reference to function template instantiation 'reactphysics3d::List<reactphysics3d::Collider *>::Iterator reactphysics3d::List<reactphysics3d::Collider *>::remove(const reactphysics3d::List<reactphysics3d::Collider *>::Iterator &)' being compiled
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\CollisionShape.h(80): message : see reference to class template instantiation 'reactphysics3d::List<reactphysics3d::Collider *>' being compiled
+  Generating Code...
+  Compiling...
+  PhysicsComponent.cpp
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\CollisionCallback.h(300,73): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\OverlapCallback.h(189,73): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\OverlapCallback.h(207,123): warning C4267: 'argument': conversion from 'size_t' to 'const reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifold.h(37,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifoldInfo.h(42): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifold.h(37): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(129,37): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseAlgorithm.h(36,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\Islands.h(94,1): warning C4267: 'initializing': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\utils\DebugRenderer.h(267,22): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\utils\DebugRenderer.h(291,26): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\PhysicsWorld.h(710,34): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\PhysicsWorld.h(718,30): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\HalfEdgeStructure.h(135,32): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\HeightFieldShape.h(197,104): warning C4244: 'return': conversion from 'double' to 'reactphysics3d::decimal', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\HeightFieldShape.h(205,19): warning C4244: 'return': conversion from 'reactphysics3d::decimal' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\TriangleMesh.h(100,34): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(102,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(103,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(104,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(105,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Map.h(503,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Map.h(435): message : while compiling class template member function 'void reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>::add(const reactphysics3d::Pair<K,reactphysics3d::Entity> &,bool)'
+          with
+          [
+              V=int,
+              K=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(398): message : see reference to function template instantiation 'void reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>::add(const reactphysics3d::Pair<K,reactphysics3d::Entity> &,bool)' being compiled
+          with
+          [
+              V=int,
+              K=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(102): message : see reference to class template instantiation 'reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>' being compiled
+          with
+          [
+              V=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Set.h(480,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Set.h(425): message : while compiling class template member function 'bool reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>::add(const V &)'
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(403): message : see reference to function template instantiation 'bool reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>::add(const V &)' being compiled
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(93): message : see reference to class template instantiation 'reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>' being compiled
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(331,1): warning C4267: 'argument': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(329): message : while compiling class template member function 'reactphysics3d::List<reactphysics3d::Collider *>::Iterator reactphysics3d::List<reactphysics3d::Collider *>::remove(const reactphysics3d::List<reactphysics3d::Collider *>::Iterator &)'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(324): message : see reference to function template instantiation 'reactphysics3d::List<reactphysics3d::Collider *>::Iterator reactphysics3d::List<reactphysics3d::Collider *>::remove(const reactphysics3d::List<reactphysics3d::Collider *>::Iterator &)' being compiled
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\CollisionShape.h(80): message : see reference to class template instantiation 'reactphysics3d::List<reactphysics3d::Collider *>' being compiled
+  PhysicsCube.cpp
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(39,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(40,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(41,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(42,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(47,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(48,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(49,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(50,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(55,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(56,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(57,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(58,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(102,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(103,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(104,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(105,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(166,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\CollisionCallback.h(300,73): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\OverlapCallback.h(189,73): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\OverlapCallback.h(207,123): warning C4267: 'argument': conversion from 'size_t' to 'const reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifold.h(37,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifoldInfo.h(42): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifold.h(37): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(129,37): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseAlgorithm.h(36,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\Islands.h(94,1): warning C4267: 'initializing': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\utils\DebugRenderer.h(267,22): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\utils\DebugRenderer.h(291,26): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\PhysicsWorld.h(710,34): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\PhysicsWorld.h(718,30): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\HalfEdgeStructure.h(135,32): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\HeightFieldShape.h(197,104): warning C4244: 'return': conversion from 'double' to 'reactphysics3d::decimal', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\HeightFieldShape.h(205,19): warning C4244: 'return': conversion from 'reactphysics3d::decimal' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\TriangleMesh.h(100,34): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Map.h(503,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Map.h(435): message : while compiling class template member function 'void reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>::add(const reactphysics3d::Pair<K,reactphysics3d::Entity> &,bool)'
+          with
+          [
+              V=int,
+              K=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(398): message : see reference to function template instantiation 'void reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>::add(const reactphysics3d::Pair<K,reactphysics3d::Entity> &,bool)' being compiled
+          with
+          [
+              V=int,
+              K=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(102): message : see reference to class template instantiation 'reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>' being compiled
+          with
+          [
+              V=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Set.h(480,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Set.h(425): message : while compiling class template member function 'bool reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>::add(const V &)'
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(403): message : see reference to function template instantiation 'bool reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>::add(const V &)' being compiled
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(93): message : see reference to class template instantiation 'reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>' being compiled
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(331,1): warning C4267: 'argument': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(329): message : while compiling class template member function 'reactphysics3d::List<reactphysics3d::Collider *>::Iterator reactphysics3d::List<reactphysics3d::Collider *>::remove(const reactphysics3d::List<reactphysics3d::Collider *>::Iterator &)'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(324): message : see reference to function template instantiation 'reactphysics3d::List<reactphysics3d::Collider *>::Iterator reactphysics3d::List<reactphysics3d::Collider *>::remove(const reactphysics3d::List<reactphysics3d::Collider *>::Iterator &)' being compiled
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\CollisionShape.h(80): message : see reference to class template instantiation 'reactphysics3d::List<reactphysics3d::Collider *>' being compiled
+  PhysicsSystem.cpp
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\CollisionCallback.h(300,73): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\OverlapCallback.h(189,73): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\OverlapCallback.h(207,123): warning C4267: 'argument': conversion from 'size_t' to 'const reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifold.h(37,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifoldInfo.h(42): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifold.h(37): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(129,37): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseAlgorithm.h(36,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\Islands.h(94,1): warning C4267: 'initializing': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\utils\DebugRenderer.h(267,22): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\utils\DebugRenderer.h(291,26): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\PhysicsWorld.h(710,34): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\PhysicsWorld.h(718,30): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\HalfEdgeStructure.h(135,32): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\HeightFieldShape.h(197,104): warning C4244: 'return': conversion from 'double' to 'reactphysics3d::decimal', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\HeightFieldShape.h(205,19): warning C4244: 'return': conversion from 'reactphysics3d::decimal' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\TriangleMesh.h(100,34): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\PhysicsSystem.cpp(12,41): warning C4305: 'argument': truncation from 'double' to 'reactphysics3d::decimal'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\PhysicsSystem.cpp(83,54): warning C4244: 'argument': conversion from 'double' to 'reactphysics3d::decimal', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\PhysicsSystem.cpp(86,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Map.h(503,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Map.h(435): message : while compiling class template member function 'void reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>::add(const reactphysics3d::Pair<K,reactphysics3d::Entity> &,bool)'
+          with
+          [
+              V=int,
+              K=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(398): message : see reference to function template instantiation 'void reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>::add(const reactphysics3d::Pair<K,reactphysics3d::Entity> &,bool)' being compiled
+          with
+          [
+              V=int,
+              K=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(102): message : see reference to class template instantiation 'reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>' being compiled
+          with
+          [
+              V=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Set.h(480,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Set.h(425): message : while compiling class template member function 'bool reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>::add(const V &)'
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(403): message : see reference to function template instantiation 'bool reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>::add(const V &)' being compiled
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(93): message : see reference to class template instantiation 'reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>' being compiled
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(331,1): warning C4267: 'argument': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(329): message : while compiling class template member function 'reactphysics3d::List<reactphysics3d::Collider *>::Iterator reactphysics3d::List<reactphysics3d::Collider *>::remove(const reactphysics3d::List<reactphysics3d::Collider *>::Iterator &)'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(324): message : see reference to function template instantiation 'reactphysics3d::List<reactphysics3d::Collider *>::Iterator reactphysics3d::List<reactphysics3d::Collider *>::remove(const reactphysics3d::List<reactphysics3d::Collider *>::Iterator &)' being compiled
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\CollisionShape.h(80): message : see reference to class template instantiation 'reactphysics3d::List<reactphysics3d::Collider *>' being compiled
+  PixelShader.cpp
+  RenderSystem.cpp
+  Resource.cpp
+  ResourceManager.cpp
+  SceneCameraHandler.cpp
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(39,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(40,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(41,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(42,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(47,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(48,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(49,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(50,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(55,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(56,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(57,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(58,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(102,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(103,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(104,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(105,44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Matrix4x4.h(166,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\CollisionCallback.h(300,73): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\OverlapCallback.h(189,73): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\OverlapCallback.h(207,123): warning C4267: 'argument': conversion from 'size_t' to 'const reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifold.h(37,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifoldInfo.h(42): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\ContactManifold.h(37): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(129,37): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseAlgorithm.h(36,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\Islands.h(94,1): warning C4267: 'initializing': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\utils\DebugRenderer.h(267,22): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\utils\DebugRenderer.h(291,26): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint32', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\PhysicsWorld.h(710,34): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\engine\PhysicsWorld.h(718,30): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\HalfEdgeStructure.h(135,32): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\HeightFieldShape.h(197,104): warning C4244: 'return': conversion from 'double' to 'reactphysics3d::decimal', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\HeightFieldShape.h(205,19): warning C4244: 'return': conversion from 'reactphysics3d::decimal' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\TriangleMesh.h(100,34): warning C4267: 'return': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\SceneCameraHandler.cpp(23,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Map.h(503,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Map.h(435): message : while compiling class template member function 'void reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>::add(const reactphysics3d::Pair<K,reactphysics3d::Entity> &,bool)'
+          with
+          [
+              V=int,
+              K=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(398): message : see reference to function template instantiation 'void reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>::add(const reactphysics3d::Pair<K,reactphysics3d::Entity> &,bool)' being compiled
+          with
+          [
+              V=int,
+              K=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(102): message : see reference to class template instantiation 'reactphysics3d::Map<int,reactphysics3d::Entity,std::hash<int>,std::equal_to<V>>' being compiled
+          with
+          [
+              V=int
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Set.h(480,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\Set.h(425): message : while compiling class template member function 'bool reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>::add(const V &)'
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(403): message : see reference to function template instantiation 'bool reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>::add(const V &)' being compiled
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\systems\CollisionDetectionSystem.h(93): message : see reference to class template instantiation 'reactphysics3d::Set<reactphysics3d::bodypair,std::hash<V>,std::equal_to<V>>' being compiled
+          with
+          [
+              V=reactphysics3d::bodypair
+          ]
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(331,1): warning C4267: 'argument': conversion from 'size_t' to 'reactphysics3d::uint', possible loss of data
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(329): message : while compiling class template member function 'reactphysics3d::List<reactphysics3d::Collider *>::Iterator reactphysics3d::List<reactphysics3d::Collider *>::remove(const reactphysics3d::List<reactphysics3d::Collider *>::Iterator &)'
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\containers\List.h(324): message : see reference to function template instantiation 'reactphysics3d::List<reactphysics3d::Collider *>::Iterator reactphysics3d::List<reactphysics3d::Collider *>::remove(const reactphysics3d::List<reactphysics3d::Collider *>::Iterator &)' being compiled
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Libs\ReactPhysics3D\Include\reactphysics3d\collision\shapes\CollisionShape.h(80): message : see reference to class template instantiation 'reactphysics3d::List<reactphysics3d::Collider *>' being compiled
+  SwapChain.cpp
+  Texture.cpp
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Texture.cpp(17,64): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
+  TextureManager.cpp
+  VertexBuffer.cpp
+  VertexShader.cpp
+  Window.cpp
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Window.h(2,1): warning C4005: 'NOMINMAX': macro redefinition
+C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\Window.h(2,1): message : 'NOMINMAX' previously declared on the command line
+  Generating Code...
   DirectXGame.vcxproj -> C:\Users\Nemeon\Desktop\Gits\GDENG2_ENGINE\GDENG_ENGINE\x64\Debug\DirectXGame.exe

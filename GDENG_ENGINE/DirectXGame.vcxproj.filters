@@ -109,6 +109,11 @@
     <ClCompile Include="TextureManager.cpp">
       <Filter>GameEngine\GraphicsEngine\ResourceManager\TextureManager</Filter>
     </ClCompile>
+    <ClCompile Include="BaseComponentSystem.cpp" />
+    <ClCompile Include="PhysicsSystem.cpp" />
+    <ClCompile Include="AComponent.cpp" />
+    <ClCompile Include="PhysicsComponent.cpp" />
+    <ClCompile Include="PhysicsCube.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppWindow.h">
@@ -182,5 +187,10 @@
       <Filter>GameEngine\GraphicsEngine\ResourceManager\TextureManager</Filter>
     </ClInclude>
     <ClInclude Include="Vector2D.h" />
+    <ClInclude Include="BaseComponentSystem.h" />
+    <ClInclude Include="PhysicsSystem.h" />
+    <ClInclude Include="AComponent.h" />
+    <ClInclude Include="PhysicsComponent.h" />
+    <ClInclude Include="PhysicsCube.h" />
   </ItemGroup>
 </Project>

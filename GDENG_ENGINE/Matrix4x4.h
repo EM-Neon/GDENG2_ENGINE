@@ -130,6 +130,17 @@ public:
 		::memcpy(m_mat, matrix.m_mat, sizeof(float) * 16);
 	}
 
+	void setMatrix(float matrix[4][4])
+	{
+		::memcpy(this->m_mat, matrix, sizeof(float) * 16);
+	}
+
+	float* getMatrix()
+	{
+		return *this->m_mat;
+	}
+		
+
 	Vector3D getZDirection()
 	{
 		return Vector3D(m_mat[2][0], m_mat[2][1], m_mat[2][2]);

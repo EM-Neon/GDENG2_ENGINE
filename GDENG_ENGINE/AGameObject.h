@@ -1,13 +1,22 @@
 #pragma once
 #include <string>
+
+#include "AComponent.h"
 #include "Vector3D.h"
 #include "Matrix4x4.h"
+#include "reactphysics3d/reactphysics3d.h"
+
+
+using namespace reactphysics3d;
 
 class VertexShader;
 class PixelShader;
 class AGameObject
 {
 public:
+	typedef std::string String;
+	typedef std::vector<AComponent*> ComponentList;
+
 	AGameObject(std::string name);
 	~AGameObject();
 
@@ -27,6 +36,19 @@ public:
 	Vector3D getLocalRotation();
 	Vector3D getLocalScale();
 
+	void attachComponent(AComponent* component);
+	void detachComponent(AComponent* component);
+
+	AComponent* findComponentByName(String name);
+	AComponent* findComponentOfType(AComponent::ComponentType type, String name);
+	ComponentList getComponentsOfType(AComponent::ComponentType type);
+	ComponentList getComponentsOfTypeRecursive(AComponent::ComponentType type);
+
+	void updateLocalMatrix();
+	void recomputeMatrix(float matrix[16]);
+	float* getMatrix();
+	float* getPhysicsLocalMatrix();
+
 	std::string getName();
 
 	__declspec(align(16))
@@ -45,5 +67,11 @@ protected:
 	Vector3D localRotation;
 	Vector3D localScale;
 	Matrix4x4 localMatrix;
+
+	//virtual void awake();
+
+	ComponentList componentList;
+
+	bool overrideMatrix = false;
 };
 

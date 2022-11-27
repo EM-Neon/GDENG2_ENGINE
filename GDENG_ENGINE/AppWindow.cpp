@@ -16,6 +16,8 @@
 #include "imgui_impl_dx11.h"
 
 #define STB_IMAGE_IMPLEMENTATION
+#include "BaseComponentSystem.h"
+#include "PhysicsCube.h"
 #include "stb_image.h"
 
 __declspec(align(16))
@@ -44,6 +46,7 @@ AppWindow::~AppWindow()
 void AppWindow::onCreate()
 {
 	EngineTime::initialize();
+	BaseComponentSystem::initialize();
 	Window::onCreate();
 	
 	SceneCameraHandler::initialize();
@@ -196,6 +199,10 @@ void AppWindow::onCreate()
 	cube->setScale(0.75, 0.001f, 1);
 	cube->setRotation(-1.25, 0, 0);
 	object_lists.push_back(cube);
+
+	//Physics Cube
+	PhysicsCube* pCube = new PhysicsCube("Cube", shaderByteCode, sizeShader);
+	object_lists.push_back(pCube);
 
 	int image_width = 0;
     int image_height = 0;
